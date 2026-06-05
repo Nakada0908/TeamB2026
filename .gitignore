@@ -97,3 +97,7 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+#Googleドライブ等から持ってくる重いデータを入れる専用フォルダを除外
+/[Aa]ssets/DriveAssets/
+/[Aa]ssets/DriveAssets.meta
