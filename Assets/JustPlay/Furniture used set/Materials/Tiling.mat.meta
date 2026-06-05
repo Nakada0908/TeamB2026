@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 095ece050f5b56a42927c33dedbb4600
+timeCreated: 1524845149
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 185990
+  packageName: Furniture used set
+  packageVersion: 1.0
+  assetPath: Assets/JustPlay/Furniture used set/Materials/Tiling.mat
+  uploadId: 435867

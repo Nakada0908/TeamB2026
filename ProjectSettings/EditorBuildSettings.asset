@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Resources/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Resources/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Resources/Scenes/CameraTest/Scene_01.unity
+    guid: 8fddc2de0292ecb4aa0a569f6131c01f
+  - enabled: 0
+    path: Assets/Resources/Scenes/TutorialScene.unity
+    guid: e321f6832b2d5b847957276e561c5533
+  - enabled: 0
+    path: Assets/Resources/Scenes/UI Test with modle.unity
+    guid: 4d7f090fce2b45140bd4fef402e512d9
+  - enabled: 0
+    path: Assets/Resources/Scenes/AnimationTest_Yoshi.unity
+    guid: bc9883f7aa1b35b4493b40c9d63340f7
+  - enabled: 0
+    path: Assets/Resources/Scenes/CameraTest/Scene_02_Cinemachine.unity
+    guid: 5ab57ab4828877641a70f6495d54468e
+  - enabled: 0
+    path: Assets/Resources/Scenes/Stage1.unity
+    guid: b33fa047cf49d3949a3b94d1310f8fe2
+  - enabled: 1
+    path: Assets/Resources/Scenes/Stage1Color.unity
+    guid: f5dde775861089b4ab44759a1d96a850
+  - enabled: 1
+    path: Assets/Resources/Scenes/TitleScene.unity
+    guid: 5c7816c626319a94e91ff2ef95650af6
+  - enabled: 1
+    path: Assets/Resources/Scenes/Stage2.unity
+    guid: 815fa41c5eefb4b4b8e88938c39003cf
+  - enabled: 0
+    path: Assets/Resources/Scenes/Stage3.unity
+    guid: 7b5177e45304c73409720e7cc3fa5893
+  - enabled: 1
+    path: Assets/Resources/Scenes/Yoshinobu/Stage3Eyes_Yoshi.unity
+    guid: f34289078ee4f3a45a302a7a0c8dfffe
+  - enabled: 1
+    path: Assets/Resources/Scenes/EndingScene.unity
+    guid: 479c3eb43caee7b4a992851677b7d28a
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 856b976ce7f52f8478080bc448f62cc8, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: f2b4b6693dd84ba4293893fb75f3ee01, type: 3}
+  m_UseUCBPForAssetBundles: 0
