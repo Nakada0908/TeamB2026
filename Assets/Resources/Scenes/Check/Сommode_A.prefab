@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1325489990988638737}
   - component: {fileID: 5183179002375659470}
   - component: {fileID: 8192730813224400705}
+  - component: {fileID: 3726419329755184180}
   - component: {fileID: 8110538158976287508}
   m_Layer: 0
   m_Name: "\u0421ommode_A"
@@ -122,6 +123,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!65 &3726419329755184180
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839042043085379055}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2286491, y: 0.806608, z: 0.3575067}
+  m_Center: {x: -0.011915207, y: 0.40230623, z: -0.004308939}
 --- !u!65 &8110538158976287508
 BoxCollider:
   m_ObjectHideFlags: 0

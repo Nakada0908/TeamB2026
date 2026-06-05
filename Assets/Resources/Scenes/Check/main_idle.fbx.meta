@@ -3,7 +3,12 @@ guid: 6d3fff7f87ab34f4294121385ace3705
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _mainchara_kari_hwang_aiStandardSurface4
+    second: {fileID: 2100000, guid: ee8121bf3223595429b0ffe558ce606c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

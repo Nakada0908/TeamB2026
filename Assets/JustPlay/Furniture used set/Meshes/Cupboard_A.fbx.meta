@@ -1,164 +1,11 @@
 fileFormatVersion: 2
-guid: a3146035c25e9614fa89caa50f2a7c7b
+guid: 096415f82230eb243a58be39fbdad68f
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: b_low.015
-    100004: b_low.016
-    100006: b_low.017
-    100008: b_low.018
-    100010: b_low.019
-    100012: b_low.020
-    100014: b_low.021
-    100016: b_low.022
-    100018: b_low.023
-    100020: b_low.024
-    100022: b_low.051
-    100024: b_low.052
-    100026: b_low.003
-    100028: b_low.004
-    100030: b_low.005
-    100032: b_low.006
-    100034: b_low.007
-    100036: b_low.008
-    100038: b_low.009
-    100040: b_low.010
-    100042: b_low.011
-    100044: b_low.014
-    100046: b_low.044
-    400000: //RootNode
-    400002: b_low.015
-    400004: b_low.016
-    400006: b_low.017
-    400008: b_low.018
-    400010: b_low.019
-    400012: b_low.020
-    400014: b_low.021
-    400016: b_low.022
-    400018: b_low.023
-    400020: b_low.024
-    400022: b_low.051
-    400024: b_low.052
-    400026: b_low.003
-    400028: b_low.004
-    400030: b_low.005
-    400032: b_low.006
-    400034: b_low.007
-    400036: b_low.008
-    400038: b_low.009
-    400040: b_low.010
-    400042: b_low.011
-    400044: b_low.014
-    400046: b_low.044
-    2100000: gloss
-    2100002: 2_norm
-    2100004: 1
-    2100006: dsp
-    2300000: b_low.015
-    2300002: b_low.016
-    2300004: b_low.017
-    2300006: b_low.018
-    2300008: b_low.019
-    2300010: b_low.020
-    2300012: b_low.021
-    2300014: b_low.022
-    2300016: b_low.023
-    2300018: b_low.024
-    2300020: b_low.051
-    2300022: b_low.052
-    2300024: b_low.003
-    2300026: b_low.004
-    2300028: b_low.005
-    2300030: b_low.006
-    2300032: b_low.007
-    2300034: b_low.008
-    2300036: b_low.009
-    2300038: b_low.010
-    2300040: b_low.011
-    2300042: b_low.014
-    2300044: b_low.044
-    3300000: b_low.015
-    3300002: b_low.016
-    3300004: b_low.017
-    3300006: b_low.018
-    3300008: b_low.019
-    3300010: b_low.020
-    3300012: b_low.021
-    3300014: b_low.022
-    3300016: b_low.023
-    3300018: b_low.024
-    3300020: b_low.051
-    3300022: b_low.052
-    3300024: b_low.003
-    3300026: b_low.004
-    3300028: b_low.005
-    3300030: b_low.006
-    3300032: b_low.007
-    3300034: b_low.008
-    3300036: b_low.009
-    3300038: b_low.010
-    3300040: b_low.011
-    3300042: b_low.014
-    3300044: b_low.044
-    4300000: b_low.052
-    4300002: b_low.051
-    4300004: b_low.024
-    4300006: b_low.023
-    4300008: b_low.022
-    4300010: b_low.021
-    4300012: b_low.020
-    4300014: b_low.015
-    4300016: b_low.019
-    4300018: b_low.018
-    4300020: b_low.017
-    4300022: b_low.016
-    4300024: b_low.004
-    4300026: b_low.044
-    4300028: b_low.014
-    4300030: b_low.011
-    4300032: b_low.010
-    4300034: b_low.009
-    4300036: b_low.008
-    4300038: b_low.007
-    4300040: b_low.006
-    4300042: b_low.005
-    4300044: b_low.003
-    6400000: b_low.015
-    6400002: b_low.016
-    6400004: b_low.017
-    6400006: b_low.018
-    6400008: b_low.019
-    6400010: b_low.020
-    6400012: b_low.021
-    6400014: b_low.022
-    6400016: b_low.023
-    6400018: b_low.024
-    6400020: b_low.051
-    6400022: b_low.052
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 1
-    second: {fileID: 2100000, guid: 095ece050f5b56a42927c33dedbb4600, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 2_norm
-    second: {fileID: 2100000, guid: 7563d9ea46baa2e4e8100da6a5095db6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: dsp
-    second: {fileID: 2100000, guid: f52a8cda72f80d04c947ee8f9a36e553, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: gloss
-    second: {fileID: 2100000, guid: cf39eca0fe7697348b88118825f3be75, type: 2}
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -167,9 +14,8 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -184,32 +30,43 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -218,10 +75,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -231,13 +88,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
