@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public enum EventType
@@ -16,6 +17,7 @@ public class EventManager : MonoBehaviour
     //んで、要素数もenumでマジックナンバーを避ける
     //……ってかEventTypeのenumをintにキャストすれば、配列のインデックスとして使えるから
     //enumの順番と配列の順番を合わせればいいんじゃないかな
+    [SerializeField] private Transform bossTransform;
     [SerializeField] private GameObject[] hasira;
     [SerializeField] private GameObject[] enemy;
 
@@ -51,18 +53,27 @@ public class EventManager : MonoBehaviour
     private void SpawnHasira(Transform position)
     {
         //柱を生成する処理
-        //引数でイベント発生地点を生成位置にする
+        //引数でイベント発生地点渡し、イベント発生地点の上に出るようにする
         Vector3 pos = position.position;
         pos.y += 10f; //柱が地面から少し上に出るように調整
-        //プレハブの回転をそのまま使う
-        Instantiate(hasira[0], pos, hasira[0].transform.rotation);
-        //今は位置を直指定しているが、制御できるようにする
-        //hasira[0].transform.localPosition = new Vector3(10, 10, 0);
+
+        //出現位置からボスへ向かう方向ベクトルを求める
+        Vector3 direction = bossTransform.position - position.position;
+        //高低差による傾きを防ぐためY軸の要素を0にする
+        //direction.y = 0;
+        //ボスの方向を向く回転に対して、プレハブの回転を合成する
+        Quaternion lookRotation = Quaternion.LookRotation(direction) * hasira[0].transform.rotation;
+
+        //合成した回転で生成
+        Instantiate(hasira[0], pos, position.rotation);
         Debug.Log("Hasira spawned.");
     }
 
     private void SpawnEnemy(Transform position)
     {
+        //敵はプレイヤーと同じく円移動するから、ボスと同じ位置に出現……
+        //はだめか、……いや、ボスの回転を渡せばプレイヤーの位置にあわせられるからむしろいいか？
+
         //敵を生成する処理
         Vector3 pos = position.position;
         pos.y += 10f; //敵が地面から少し上に出るように調整
