@@ -21205,14 +21205,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6697247148964139945, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 444580298}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9157125850852783736, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 519546788}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
 --- !u!1 &444580295
 GameObject:
@@ -21300,12 +21294,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444580295}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.99582064, z: 0.09133064, w: 0}
-  m_LocalPosition: {x: -8.1, y: 0.56666654, z: 23.499998}
-  m_LocalScale: {x: 3.333333, y: 1.6947026, z: 3.226576}
+  m_LocalRotation: {x: 0.09133064, y: -0, z: -0, w: 0.99582064}
+  m_LocalPosition: {x: 0, y: 0.59, z: -6.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 519546787}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 10.48, y: 0, z: 0}
 --- !u!114 &444580299
 MonoBehaviour:
@@ -21472,29 +21466,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &519546779 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157125850852783736, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
-  m_PrefabInstance: {fileID: 375464398}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &519546787 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6697247148964139945, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
-  m_PrefabInstance: {fileID: 375464398}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &519546788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519546779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ccd388d42912894792289d6b5734c45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: 5
 --- !u!1 &556864587
 GameObject:
   m_ObjectHideFlags: 0
@@ -23076,6 +23047,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 444580298}
   - {fileID: 477772442}
   - {fileID: 636657129}
   - {fileID: 958886071}
