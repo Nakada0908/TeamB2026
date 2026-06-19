@@ -72,6 +72,7 @@ mono_crash.*
 *.unitypackage
 *.unitypackage.meta
 *.app
+*.fbx #FBXをはじく
 
 # Crashlytics generated file
 crashlytics-build.properties
