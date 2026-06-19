@@ -38,23 +38,23 @@ public class DebugSceneChanger : MonoBehaviour
         {
             SceneManager.LoadScene("StageBoss");
         }
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            SceneManager.LoadScene("LookBack");
+        }
 
         //各自のシーン
-        if(Input.GetKeyDown(KeyCode.F5))
-        {
-            SceneManager.LoadScene("BossAtk");
-        }
         if (Input.GetKeyDown(KeyCode.F6))
         {
             SceneManager.LoadScene("BossAtk");
         }
         if (Input.GetKeyDown(KeyCode.F7))
         {
-            SceneManager.LoadScene("BossAtk");
+            SceneManager.LoadScene("oonari");
         }
         if (Input.GetKeyDown(KeyCode.F8))
         {
-            SceneManager.LoadScene("BossAtk");
+            SceneManager.LoadScene("ichinose");
         }
         if (Input.GetKeyDown(KeyCode.F9))
         {
