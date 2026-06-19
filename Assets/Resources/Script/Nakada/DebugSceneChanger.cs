@@ -21,6 +21,7 @@ public class DebugSceneChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ゲーム本編
         if(Input.GetKeyDown (KeyCode.F1))
         {
             SceneManager.LoadScene("Stage1color");
@@ -36,6 +37,28 @@ public class DebugSceneChanger : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F4))
         {
             SceneManager.LoadScene("StageBoss");
+        }
+
+        //各自のシーン
+        if(Input.GetKeyDown(KeyCode.F5))
+        {
+            SceneManager.LoadScene("BossAtk");
+        }
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            SceneManager.LoadScene("BossAtk");
+        }
+        if (Input.GetKeyDown(KeyCode.F7))
+        {
+            SceneManager.LoadScene("BossAtk");
+        }
+        if (Input.GetKeyDown(KeyCode.F8))
+        {
+            SceneManager.LoadScene("BossAtk");
+        }
+        if (Input.GetKeyDown(KeyCode.F9))
+        {
+            SceneManager.LoadScene("BossAtk");
         }
     }
 }
