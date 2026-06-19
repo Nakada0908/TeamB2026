@@ -48,6 +48,9 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/Yoshinobu/Stage3Eyes_Yoshi.unity
     guid: f34289078ee4f3a45a302a7a0c8dfffe
   - enabled: 1
+    path: Assets/Resources/Scenes/StageBoss.unity
+    guid: 01f6d901696e833468df967dee47bc56
+  - enabled: 1
     path: Assets/Resources/Scenes/EndingScene.unity
     guid: 479c3eb43caee7b4a992851677b7d28a
   - enabled: 1
