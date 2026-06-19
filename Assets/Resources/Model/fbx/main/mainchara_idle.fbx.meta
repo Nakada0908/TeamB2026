@@ -22,7 +22,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -80,7 +80,162 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: mainchara_idle(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:karad
+      parentName: mainchara_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:hair
+      parentName: mainchara_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:hat
+      parentName: mainchara_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:kao
+      parentName: mainchara_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:mahura
+      parentName: mainchara_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:botton_big
+      parentName: mainchara_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:huku
+      parentName: mainchara_idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:hip
+      parentName: mainchara_idle(Clone)
+      position: {x: -0, y: 0.14253147, z: -1.5777218e-32}
+      rotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1}
+    - name: _mainchara_kari_hwang:spine1
+      parentName: _mainchara_kari_hwang:hip
+      position: {x: -0.05633402, y: 1.2508665e-17, z: -2.9187854e-31}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000012, y: 1.0000012, z: 1}
+    - name: _mainchara_kari_hwang:head
+      parentName: _mainchara_kari_hwang:spine1
+      position: {x: -0.09903711, y: 2.1990656e-17, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000014, y: 1.0000014, z: 1}
+    - name: _mainchara_kari_hwang:headTop
+      parentName: _mainchara_kari_hwang:head
+      position: {x: -0.30215085, y: 6.7090965e-17, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.000001, y: 1.000001, z: 1}
+    - name: _mainchara_kari_hwang:mainchara_rig:joint1
+      parentName: _mainchara_kari_hwang:head
+      position: {x: 0.06241489, y: -0.042350963, z: -0.07728648}
+      rotation: {x: -0.007176741, y: -0.5061132, z: 0.672081, w: 0.5404675}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000005}
+    - name: _mainchara_kari_hwang:mainchara_rig:joint2
+      parentName: _mainchara_kari_hwang:mainchara_rig:joint1
+      position: {x: -0.057884302, y: -0.0003509567, z: -3.5527136e-17}
+      rotation: {x: 0.00000005029142, y: -0.070949376, z: 0.0000000048894435, w: 0.99748}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000002}
+    - name: _mainchara_kari_hwang:mainchara_rig:joint4
+      parentName: _mainchara_kari_hwang:mainchara_rig:joint2
+      position: {x: -0.085178494, y: -0.0051888465, z: 0.0019213791}
+      rotation: {x: 0.40099767, y: 0.29658008, z: -0.16692418, w: -0.850516}
+      scale: {x: 0.9999992, y: 1.0000007, z: 0.99999994}
+    - name: _mainchara_kari_hwang:mainchara_rig:joint6
+      parentName: _mainchara_kari_hwang:mainchara_rig:joint4
+      position: {x: -0.07985484, y: -0.019844059, z: 0.000058353202}
+      rotation: {x: -0.8776394, y: -0.12498291, z: -0.1571733, w: 0.4352297}
+      scale: {x: 1.0000002, y: 1.0000013, z: 0.9999992}
+    - name: _mainchara_kari_hwang:mainchara_rig:joint7
+      parentName: _mainchara_kari_hwang:mainchara_rig:joint6
+      position: {x: -0.05212345, y: -0.0021220082, z: -0.0026305865}
+      rotation: {x: -0, y: -0.000000014901159, z: 0.000000014901159, w: 1}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000004}
+    - name: _mainchara_kari_hwang:leftShoulder
+      parentName: _mainchara_kari_hwang:spine1
+      position: {x: -0.05866724, y: -0.030015795, z: 0}
+      rotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:leftArm
+      parentName: _mainchara_kari_hwang:leftShoulder
+      position: {x: -0.029333618, y: 0, z: 0}
+      rotation: {x: 0.01739338, y: -0.000018794088, z: 0.00002968311, w: 0.9998487}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: _mainchara_kari_hwang:leftForeArm
+      parentName: _mainchara_kari_hwang:leftArm
+      position: {x: -0.065489, y: 0, z: 0}
+      rotation: {x: 0.034569327, y: 0.000032498032, z: -0.00005777075, w: 0.99940234}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: _mainchara_kari_hwang:lefthandTop
+      parentName: _mainchara_kari_hwang:leftForeArm
+      position: {x: -0.073675126, y: -3.5527136e-17, z: 0}
+      rotation: {x: -0, y: -0, z: 1.7053021e-12, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: _mainchara_kari_hwang:rightShoulder
+      parentName: _mainchara_kari_hwang:spine1
+      position: {x: -0.05866751, y: 0.0300158, z: 0}
+      rotation: {x: 0.7071068, y: 0.7071068, z: -4.3297806e-17, w: -4.329782e-17}
+      scale: {x: 1, y: 1.0000019, z: 1.0000019}
+    - name: _mainchara_kari_hwang:rightArm
+      parentName: _mainchara_kari_hwang:rightShoulder
+      position: {x: 0.0293336, y: 0, z: 3.9443044e-33}
+      rotation: {x: 0.00069709524, y: -0.000046005407, z: -0.000000059604638, w: 0.99999976}
+      scale: {x: 1, y: 1.0000006, z: 1.000001}
+    - name: _mainchara_kari_hwang:rightForeArm
+      parentName: _mainchara_kari_hwang:rightArm
+      position: {x: 0.0654886, y: -3.5527136e-17, z: 3.9443044e-33}
+      rotation: {x: -1.7462297e-10, y: 0.00008686516, z: -9.486473e-10, w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000005}
+    - name: _mainchara_kari_hwang:righthandTop
+      parentName: _mainchara_kari_hwang:rightForeArm
+      position: {x: 0.073676, y: 3.5527136e-17, z: -3.9443044e-33}
+      rotation: {x: -0, y: -0, z: -4.1401273e-17, w: 1}
+      scale: {x: 1.0000001, y: 1.0000014, z: 1.0000015}
+    - name: _mainchara_kari_hwang:leftUpLeg
+      parentName: _mainchara_kari_hwang:hip
+      position: {x: -1.7763568e-17, y: -0.040501766, z: 0}
+      rotation: {x: -0.012656746, y: 0.6984668, z: 0.71550375, w: -0.0061994186}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000004}
+    - name: _mainchara_kari_hwang:leftLeg
+      parentName: _mainchara_kari_hwang:leftUpLeg
+      position: {x: -0.066640995, y: -9.860761e-34, z: 2.3072648e-18}
+      rotation: {x: -0.00015444479, y: -0.00022769437, z: 0.008869718, w: 0.99996066}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999994}
+    - name: _mainchara_kari_hwang:leftfootTop
+      parentName: _mainchara_kari_hwang:leftLeg
+      position: {x: -0.07594621, y: 9.299281e-18, z: -3.0364599e-16}
+      rotation: {x: 1.45519135e-11, y: -0, z: 2.2404475e-10, w: 1}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+    - name: _mainchara_kari_hwang:rightUpLeg
+      parentName: _mainchara_kari_hwang:hip
+      position: {x: 0.0000004712524, y: 0.0405018, z: 0}
+      rotation: {x: -0.7155043, y: 0.0062054098, z: -0.012650102, w: 0.6984663}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: _mainchara_kari_hwang:rightLeg
+      parentName: _mainchara_kari_hwang:rightUpLeg
+      position: {x: 0.06664053, y: 1.911862e-23, z: -0.00000008610261}
+      rotation: {x: -0.0001541376, y: -0.00022663918, z: 0.008853106, w: 0.99996084}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+    - name: _mainchara_kari_hwang:rightfootTop
+      parentName: _mainchara_kari_hwang:rightLeg
+      position: {x: 0.07594621, y: 1.3976607e-16, z: 0.000000005787111}
+      rotation: {x: 0.000000030369844, y: 0.00000006260233, z: 0.000000021886743, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 1.0000001}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -97,7 +252,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
