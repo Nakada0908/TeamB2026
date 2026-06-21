@@ -25,11 +25,12 @@ public class EventTrigger : MonoBehaviour
             Invoke(nameof(ExecuteEvents), currentData.dropDelayTime);
             //イベントが起きたらいったんリセット
             currentData = null;
+            //次のイベントを取得する
         }
     }
 
     private void ExecuteEvents()
     {
-        EventManager.Instance.ActivateEvent(currentData.dropType, this.transform);
+        //EventManager.Instance.ActivateEvent(currentData.dropType, this.transform);
     }
 }

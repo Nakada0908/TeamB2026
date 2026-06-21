@@ -2,10 +2,12 @@
   "EventList": [
     {
       "dropType": 0,
+      "clockPosition": 7,
       "dropDelayTime": 0
     },
     {
-      "dropType": 1,
+      "dropType": 100,
+      "clockPosition": 9,
       "dropDelayTime": 0
     }
   ]
