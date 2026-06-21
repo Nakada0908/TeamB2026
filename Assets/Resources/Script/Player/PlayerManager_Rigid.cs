@@ -33,6 +33,11 @@ public class PlayerManager_Rigid : MonoBehaviour
     public bool pull = false;
     public bool dead = false;
 
+    [Header("Cutscene Controls (演出用)")]
+    public bool isCutsceneMode = false;         
+    public Vector2 simulatedMoveInput = Vector2.zero; 
+    private Vector2 realMoveInput = Vector2.zero;
+
     private bool hiding;
     private GameObject pushingObject = null;
     private GameObject holdingRopeObejuct = null;
@@ -93,29 +98,31 @@ public class PlayerManager_Rigid : MonoBehaviour
     void Update()
     {
 
-        //仮処理
-        //if(Input.GetKeyDown(KeyCode.F))
-        //{
-        //    currentStates = EPlayerStates.Death;
-        //}
+        if (isCutsceneMode)
+        {
+            // 演出
+            moveInput = simulatedMoveInput;
+            actionButton = false;
+            desiredJump = false;
+        }
+        else
+        {
+            moveInput = realMoveInput;
 
-        //if (Input.GetKeyDown(KeyCode.G))
-        //{
-        //    currentStates = EPlayerStates.Stand;
-        //}
+            if (Input.GetButtonDown("ActionButton"))
+            {
+                actionButton = true;
+            }
+            if (Input.GetButtonUp("ActionButton"))
+            {
+                actionButton = false;
+            }
+            desiredJump |= Input.GetButtonDown("Jump2");
+        }
 
         if (debugText != null)
         {
             debugText.text = "status: " + currentStates + "\n" + "hiding:" + hiding + "\n" + "ActionButton:" + actionButton;
-        }
-
-        if (Input.GetButtonDown("ActionButton"))
-        {
-            actionButton = true;
-        }
-        if (Input.GetButtonUp("ActionButton"))
-        {
-            actionButton = false;
         }
         if (!specialAction)
         {
@@ -725,6 +732,6 @@ public class PlayerManager_Rigid : MonoBehaviour
     #endregion
     public void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();
+        realMoveInput = value.Get<Vector2>();
     }
 }
