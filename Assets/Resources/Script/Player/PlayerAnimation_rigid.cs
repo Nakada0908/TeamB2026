@@ -2,8 +2,11 @@
 using UnityEngine.Animations;
 public class PlayerAnimation_rigid : MonoBehaviour
 {
+
     public Animator animator;
     public PlayerManager_Rigid playerManager;
+    [Header("アニメーション設定")]
+    public float turnSpeed = 10f;
 
     Quaternion targetRotation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -61,7 +64,7 @@ public class PlayerAnimation_rigid : MonoBehaviour
         {
             targetRotation = playerManager.targetRotation;
         }
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
     }
 
 
