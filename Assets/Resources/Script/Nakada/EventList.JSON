@@ -1,0 +1,12 @@
+{
+  "EventList": [
+    {
+      "dropType": 0,
+      "dropDelayTime": 0
+    },
+    {
+      "dropType": 1,
+      "dropDelayTime": 0
+    }
+  ]
+}

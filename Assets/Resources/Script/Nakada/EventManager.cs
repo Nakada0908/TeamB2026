@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,18 +9,33 @@ public enum EventType
     EnemySpawn,
 }
 
+//JSON読み込み用のクラス
+[System.Serializable]
+public class EventData
+{
+    public EventType dropType;
+    //Vector3 dropPos;
+    public float dropDelayTime;
+}
+
+[System.Serializable]
+public class EventDataContainer
+{
+    public List<EventData> eventList;
+}
+
 public class EventManager : MonoBehaviour
 {
     public static EventManager Instance { get; private set; }
 
-    //[SerializeField] private GameObject[] eventObjects;
-    //dropsObujectsって名前にして、落とすオブジェクトを配列化
-    //んで、要素数もenumでマジックナンバーを避ける
-    //……ってかEventTypeのenumをintにキャストすれば、配列のインデックスとして使えるから
-    //enumの順番と配列の順番を合わせればいいんじゃないかな
+    [SerializeField] private Transform[] eventPos;
+    //出現するオブジェクトと、円の中心にいるボスを設定しておく
     [SerializeField] private Transform bossTransform;
     [SerializeField] private GameObject[] hasira;
     [SerializeField] private GameObject[] enemy;
+
+    [SerializeField] private List<EventData> eventList = new List<EventData>();
+    [SerializeField] private TextAsset eventJsonFile;
 
     void Awake()
     {
@@ -31,6 +47,14 @@ public class EventManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        LoadEventList();
+    }
+
+    private void LoadEventList()
+    {
+        EventDataContainer loadedData = JsonUtility.FromJson<EventDataContainer>(eventJsonFile.text);
+        eventList = loadedData.eventList;
     }
 
     public void ActivateEvent(EventType eventType, Transform spawnPosition)
@@ -59,8 +83,6 @@ public class EventManager : MonoBehaviour
 
         //出現位置からボスへ向かう方向ベクトルを求める
         Vector3 direction = bossTransform.position - position.position;
-        //高低差による傾きを防ぐためY軸の要素を0にする
-        //direction.y = 0;
         //ボスの方向を向く回転に対して、プレハブの回転を合成する
         Quaternion lookRotation = Quaternion.LookRotation(direction) * hasira[0].transform.rotation;
 

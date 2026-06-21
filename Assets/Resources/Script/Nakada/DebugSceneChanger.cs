@@ -32,7 +32,7 @@ public class DebugSceneChanger : MonoBehaviour
         }
         if (Input.GetKeyDown (KeyCode.F3))
         {
-            SceneManager.LoadScene("Stage3esey");
+            SceneManager.LoadScene("Stage3Eyes");
         }
         if(Input.GetKeyDown(KeyCode.F4))
         {
