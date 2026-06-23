@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static UnityEditor.Searcher.Searcher.AnalyticsEvent;
 
 public enum EventType
 {
+    EventType_None = 0,
     //イベントの種類を定義
-    HasiraSpawn = 0,
+    HasiraSpawn = 1,
+
     EnemySpawn = 100,
 }
 
@@ -36,8 +40,7 @@ public class EventManager : MonoBehaviour
     //出現位置
     [SerializeField] private SetEventPos eventPos;
     //出現オブジェクトを設定
-    [SerializeField] private GameObject[] hasira;
-    [SerializeField] private GameObject[] enemy;
+    private Dictionary<EventType, GameObject> dropObjects = new Dictionary<EventType, GameObject>();
     //イベントのデータ
     [SerializeField] private List<EventData> eventList = new List<EventData>();
     [SerializeField] private TextAsset eventJsonFile;
@@ -57,8 +60,12 @@ public class EventManager : MonoBehaviour
             eventList[i].eventId = i;
             eventList[i].pointIndex = eventList[i].clockPosition - 1;
         }
+    }
 
+    private void Start()
+    {
         SetNextEventCollider();
+        LoadObjects();
     }
 
     //次のイベント地点へ移動させる
@@ -83,7 +90,6 @@ public class EventManager : MonoBehaviour
         currentEventIndex++;
     }
 
-    //プレイヤーとの接触判定とコルーチン
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -100,41 +106,31 @@ public class EventManager : MonoBehaviour
         ActivateEvent(eventData, spawnPoint);
     }
 
+    //共通のイベント発生処理
     public void ActivateEvent(EventData currentEvent, EventPointData targetPoint)
     {
-        switch (currentEvent.dropType)
+        //イベントタイプがあったらオブジェクトを取得する
+        if (dropObjects.TryGetValue(currentEvent.dropType, out GameObject prefab))
         {
-            case EventType.HasiraSpawn:
-                SpawnHasira(targetPoint);
-                break;
-            case EventType.EnemySpawn:
-                SpawnEnemy(targetPoint);
-                break;
-            default:
-                Debug.LogWarning("Unknown event type: " + currentEvent.dropType);
-                break;
+            Vector3 pos = targetPoint.position;
+            pos.y += 10f;
+            Instantiate(prefab, pos, targetPoint.rotation);
+            Debug.Log(dropObjects.ToString() + " spawned.");
+        }
+        else
+        {
+            Debug.LogError("存在しないイベントを指定してるよ！ID:"+currentEvent.eventId);
         }
     }
 
-    #region 各種イベントの発生処理
-    private void SpawnHasira(EventPointData position)
+    #region オブジェクトの読み込み
+    private void LoadObjects()
     {
-        //柱を生成する処理
-        Vector3 pos = position.position;
-        pos.y += 10f; //柱が地面から少し上に出るように調整
+        //障害物のスポーン
+        dropObjects[EventType.HasiraSpawn]= Resources.Load<GameObject>("Script/Nakada/Hasira");
 
-        //合成した回転で生成
-        Instantiate(hasira[0], pos, position.rotation);
-        Debug.Log("Hasira spawned.");
-    }
-
-    private void SpawnEnemy(EventPointData position)
-    {
-        Vector3 pos = position.position;
-        pos.y += 10f; //敵が地面から少し上に出るように調整
-
-        Instantiate(enemy[0], pos, position.rotation);
-        Debug.Log("Enemy spawned.");
+        //敵のスポーン
+        dropObjects[EventType.EnemySpawn]= Resources.Load<GameObject>("Script/Nakada/Enemy");
     }
     #endregion
 }
