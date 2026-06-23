@@ -21,7 +21,10 @@ public class SetEventPos : MonoBehaviour
         for (int i = 0; i < 12; i++)
         {
             //角度の計算、今回は初めに30度から始めることで時計の1時方向から配置されるようにする
-            float angleDeg = 30 + i * 30f;
+            //float angleDeg = 30 + i * 30f;
+            //右に進むなら……反時計回りで設定しようか……
+            float angleDeg = -30f - (i * 30f);
+
             //角度をラジアンに変換
             float angleRad = angleDeg * Mathf.Deg2Rad;
 

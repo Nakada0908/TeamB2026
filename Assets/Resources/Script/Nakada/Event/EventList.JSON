@@ -1,12 +1,12 @@
 {
   "eventData": [
     {
-      "dropType": 1,
+      "eventTypeStr": "HasiraSpawn",
       "clockPosition": 7,
       "dropDelayTime": 0
     },
     {
-      "dropType": 100,
+      "eventTypeStr": "EnemySpawn",
       "clockPosition": 9,
       "dropDelayTime": 0
     }

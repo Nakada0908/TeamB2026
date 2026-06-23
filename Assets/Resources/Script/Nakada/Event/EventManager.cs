@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.Searcher.Searcher.AnalyticsEvent;
 
 public enum EventType
 {
@@ -18,14 +15,17 @@ public enum EventType
 [System.Serializable]
 public class EventData
 {
-    [HideInInspector]
-    public int eventId;
-    //JSONロード時に計算した配列インデックスを保持する変数
-    [HideInInspector]
-    public int pointIndex;
-    public EventType dropType;
+    //JSONから取得するもの
+    public string eventTypeStr;
     public int clockPosition;
     public float dropDelayTime;
+
+    //自動設定されるもの
+    [HideInInspector] public int eventId;
+    //dropTypeStrをEventTypeに変換したのを保持
+    [HideInInspector] public EventType eventType;
+    //移動地点を配列用に変換したのを保持
+    [HideInInspector] public int pointIndex;
 }
 
 //Jsonの配列を読み込むために必要なラッパークラス
@@ -59,13 +59,24 @@ public class EventManager : MonoBehaviour
         {
             eventList[i].eventId = i;
             eventList[i].pointIndex = eventList[i].clockPosition - 1;
+
+            //JSONの文字列からEnum型へ変換する
+            if (System.Enum.TryParse(eventList[i].eventTypeStr, out EventType parsedType))
+            {
+                eventList[i].eventType = parsedType;
+            }
+            else
+            {
+                eventList[i].eventType = EventType.EventType_None;
+                Debug.LogError("無効なEventType文字列です: " + eventList[i].eventTypeStr);
+            }
         }
     }
 
     private void Start()
     {
-        SetNextEventCollider();
         LoadObjects();
+        SetNextEventCollider();
     }
 
     //次のイベント地点へ移動させる
@@ -110,12 +121,12 @@ public class EventManager : MonoBehaviour
     public void ActivateEvent(EventData currentEvent, EventPointData targetPoint)
     {
         //イベントタイプがあったらオブジェクトを取得する
-        if (dropObjects.TryGetValue(currentEvent.dropType, out GameObject prefab))
+        if (dropObjects.TryGetValue(currentEvent.eventType, out GameObject prefab))
         {
             Vector3 pos = targetPoint.position;
             pos.y += 10f;
             Instantiate(prefab, pos, targetPoint.rotation);
-            Debug.Log(dropObjects.ToString() + " spawned.");
+            Debug.Log(currentEvent.eventType.ToString() + "がスポーンしたよ");
         }
         else
         {
