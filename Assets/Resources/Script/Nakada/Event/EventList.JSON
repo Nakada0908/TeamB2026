@@ -9,6 +9,26 @@
       "eventTypeStr": "EnemySpawn",
       "clockPosition": 9,
       "dropDelayTime": 0
+    },
+    {
+      "eventTypeStr": "HasiraSpawn",
+      "clockPosition": 11,
+      "dropDelayTime": 0
+    },
+    {
+      "eventTypeStr": "EnemySpawn",
+      "clockPosition": 1,
+      "dropDelayTime": 0
+    },
+    {
+      "eventTypeStr": "EnemySpawn",
+      "clockPosition": 4,
+      "dropDelayTime": 0
+    },
+    {
+      "eventTypeStr": "HasiraSpawn",
+      "clockPosition": 5,
+      "dropDelayTime": 0
     }
   ]
 }
