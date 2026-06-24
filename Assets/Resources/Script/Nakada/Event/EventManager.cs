@@ -17,15 +17,18 @@ public class EventData
 {
     //JSONから取得するもの
     public string eventTypeStr;
-    public int clockPosition;
+    public int clockColliderPosition;
+    public int clockSpawnPosition;
     public float dropDelayTime;
 
+    //実際に使うもの
     //自動設定されるもの
     [HideInInspector] public int eventId;
-    //dropTypeStrをEventTypeに変換したのを保持
+    //dropTypeStrをEventTypeに変換
     [HideInInspector] public EventType eventType;
-    //移動地点を配列用に変換したのを保持
-    [HideInInspector] public int pointIndex;
+    //コライダー移動地点、生成地点を配列用に変換
+    [HideInInspector] public int colliderPositionNum;
+    [HideInInspector] public int spawnPositionNum;
 }
 
 //Jsonの配列を読み込むために必要なラッパークラス
@@ -39,7 +42,7 @@ public class EventManager : MonoBehaviour
 {
     //出現位置
     [SerializeField] private SetEventPos eventPos;
-    //出現オブジェクトを設定
+    //出現オブジェクトをTypeとオブジェクトをセットにして設定
     private Dictionary<EventType, GameObject> dropObjects = new Dictionary<EventType, GameObject>();
     //イベントのデータ
     [SerializeField] private List<EventData> eventList = new List<EventData>();
@@ -58,7 +61,8 @@ public class EventManager : MonoBehaviour
         for (int i = 0; i < eventList.Count; i++)
         {
             eventList[i].eventId = i;
-            eventList[i].pointIndex = eventList[i].clockPosition - 1;
+            eventList[i].colliderPositionNum = eventList[i].clockColliderPosition - 1;
+            eventList[i].spawnPositionNum = eventList[i].clockSpawnPosition - 1;
 
             //JSONの文字列からEnum型へ変換する
             if (System.Enum.TryParse(eventList[i].eventTypeStr, out EventType parsedType))
@@ -91,7 +95,7 @@ public class EventManager : MonoBehaviour
 
         //次のイベントデータからイベント地点の位置と回転を取得して、コライダーを移動させる
         currentEventData = eventList[currentEventIndex];
-        currentTargetPoint = eventPos.eventPoints[currentEventData.pointIndex];
+        currentTargetPoint = eventPos.eventPoints[currentEventData.colliderPositionNum];
 
         //自身を移動
         transform.position = currentTargetPoint.position;
@@ -105,7 +109,8 @@ public class EventManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(StartEvent(currentEventData, currentTargetPoint));
+            EventPointData spawnPoint = eventPos.eventPoints[currentEventData.spawnPositionNum];
+            StartCoroutine(StartEvent(currentEventData, spawnPoint));
             SetNextEventCollider();
         }
     }
