@@ -102,3 +102,5 @@ InitTestScene*.unity*
 #Googleドライブ等から持ってくる重いデータを入れる専用フォルダを除外
 /[Aa]ssets/DriveAssets/
 /[Aa]ssets/DriveAssets.meta
+/[Aa]ssets/ScansFactory/
+/[Aa]ssets/ScansFactory.meta
