@@ -11,39 +11,29 @@ public enum EventType
     EnemySpawn = 100,
 }
 
-//JSON読み込み用のクラス
+//読み込み用のクラス
 [System.Serializable]
 public class EventData
 {
-    //JSONから取得するもの
-    public string eventTypeStr;
-    public int clockPosition;
-    public float dropDelayTime;
-
     //自動設定されるもの
-    [HideInInspector] public int eventId;
-    //dropTypeStrをEventTypeに変換したのを保持
-    [HideInInspector] public EventType eventType;
-    //移動地点を配列用に変換したのを保持
-    [HideInInspector] public int pointIndex;
-}
-
-//Jsonの配列を読み込むために必要なラッパークラス
-[System.Serializable]
-public class EventDataContainer
-{
-    public List<EventData> eventData;
+    public int eventId;
+    //dropTypeStrをEventTypeに変換
+    public EventType eventType;
+    //コライダー移動地点、生成地点を配列用に変換
+    public int colliderPositionNum;
+    public int spawnPositionNum;
+    public float dropDelayTime;
 }
 
 public class EventManager : MonoBehaviour
 {
     //出現位置
     [SerializeField] private SetEventPos eventPos;
-    //出現オブジェクトを設定
+    //出現オブジェクトをTypeとオブジェクトをセットにして設定
     private Dictionary<EventType, GameObject> dropObjects = new Dictionary<EventType, GameObject>();
     //イベントのデータ
     [SerializeField] private List<EventData> eventList = new List<EventData>();
-    [SerializeField] private TextAsset eventJsonFile;
+    [SerializeField] private TextAsset eventCsvFile;
     private int currentEventIndex = 0;
 
     private EventData currentEventData;
@@ -51,26 +41,7 @@ public class EventManager : MonoBehaviour
 
     void Awake()
     {
-        //Jsonファイルからイベントデータを読み込み
-        EventDataContainer loadedData = JsonUtility.FromJson<EventDataContainer>(eventJsonFile.text);
-        eventList = loadedData.eventData;
-        //イベントIDを設定及び時計のように位置をJSONに書いたので、それを調整する
-        for (int i = 0; i < eventList.Count; i++)
-        {
-            eventList[i].eventId = i;
-            eventList[i].pointIndex = eventList[i].clockPosition - 1;
-
-            //JSONの文字列からEnum型へ変換する
-            if (System.Enum.TryParse(eventList[i].eventTypeStr, out EventType parsedType))
-            {
-                eventList[i].eventType = parsedType;
-            }
-            else
-            {
-                eventList[i].eventType = EventType.EventType_None;
-                Debug.LogError("無効なEventType文字列です: " + eventList[i].eventTypeStr);
-            }
-        }
+        LoadCsvList();
     }
 
     private void Start()
@@ -89,15 +60,12 @@ public class EventManager : MonoBehaviour
             return;
         }
 
-        //次のイベントデータからイベント地点の位置と回転を取得して、コライダーを移動させる
         currentEventData = eventList[currentEventIndex];
-        currentTargetPoint = eventPos.eventPoints[currentEventData.pointIndex];
+        currentTargetPoint = eventPos.eventPoints[currentEventData.colliderPositionNum];
 
-        //自身を移動
         transform.position = currentTargetPoint.position;
         transform.rotation = currentTargetPoint.rotation;
 
-        //次のイベントへ進めておく
         currentEventIndex++;
     }
 
@@ -105,7 +73,8 @@ public class EventManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(StartEvent(currentEventData, currentTargetPoint));
+            EventPointData spawnPoint = eventPos.eventPoints[currentEventData.spawnPositionNum];
+            StartCoroutine(StartEvent(currentEventData, spawnPoint));
             SetNextEventCollider();
         }
     }
@@ -131,6 +100,41 @@ public class EventManager : MonoBehaviour
         else
         {
             Debug.LogError("存在しないイベントを指定してるよ！ID:"+currentEvent.eventId);
+        }
+    }
+
+    private void LoadCsvList()
+    {
+        //eventCsvFileを行ごとに分けて、空白があった場合は無視する
+        string[] lines = eventCsvFile.text.Split(new char[] { '\n', '\r' },
+            System.StringSplitOptions.RemoveEmptyEntries);
+
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] values = lines[i].Split(',');
+
+            if (values.Length < 4) continue;
+
+            EventData newData = new EventData();
+            newData.eventId = i - 1;
+
+            //読み込んだ文字列をEnumに変換して直接代入
+            if (System.Enum.TryParse(values[0], out EventType parsedType))
+            {
+                newData.eventType = parsedType;
+            }
+            else
+            {
+                newData.eventType = EventType.EventType_None;
+                Debug.LogError("無効なEventType文字列です(行 " + (i + 1) + "): " + values[0]);
+            }
+
+            //各項目の調整
+            newData.colliderPositionNum = int.Parse(values[1]) - 1;
+            newData.spawnPositionNum = int.Parse(values[2]) - 1;
+            newData.dropDelayTime = float.Parse(values[3]);
+
+            eventList.Add(newData);
         }
     }
 

@@ -1,0 +1,6 @@
+eventTypeStr,clockColliderPosition,clockSpawnPosition,dropDelayTime
+HasiraSpawn,7,9,0
+EnemySpawn,9,12,2
+HasiraSpawn,12,1,0
+HasiraSpawn,1,5,0
+HasiraSpawn,2,1,0
