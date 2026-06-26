@@ -663,7 +663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventPos: {fileID: 533737905}
   eventList: []
-  eventJsonFile: {fileID: 4900000, guid: dcb1b8f0e2568c742bc0e487c28b6964, type: 3}
+  eventCsvFile: {fileID: 4900000, guid: b8ec54b3cc1695440a6ea9da674cc1e0, type: 3}
 --- !u!4 &1159156492
 Transform:
   m_ObjectHideFlags: 0

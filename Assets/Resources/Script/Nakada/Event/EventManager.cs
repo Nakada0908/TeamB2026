@@ -11,31 +11,18 @@ public enum EventType
     EnemySpawn = 100,
 }
 
-//JSON読み込み用のクラス
+//読み込み用のクラス
 [System.Serializable]
 public class EventData
 {
-    //JSONから取得するもの
-    public string eventTypeStr;
-    public int clockColliderPosition;
-    public int clockSpawnPosition;
-    public float dropDelayTime;
-
-    //実際に使うもの
     //自動設定されるもの
-    [HideInInspector] public int eventId;
+    public int eventId;
     //dropTypeStrをEventTypeに変換
-    [HideInInspector] public EventType eventType;
+    public EventType eventType;
     //コライダー移動地点、生成地点を配列用に変換
-    [HideInInspector] public int colliderPositionNum;
-    [HideInInspector] public int spawnPositionNum;
-}
-
-//Jsonの配列を読み込むために必要なラッパークラス
-[System.Serializable]
-public class EventDataContainer
-{
-    public List<EventData> eventData;
+    public int colliderPositionNum;
+    public int spawnPositionNum;
+    public float dropDelayTime;
 }
 
 public class EventManager : MonoBehaviour
@@ -46,7 +33,7 @@ public class EventManager : MonoBehaviour
     private Dictionary<EventType, GameObject> dropObjects = new Dictionary<EventType, GameObject>();
     //イベントのデータ
     [SerializeField] private List<EventData> eventList = new List<EventData>();
-    [SerializeField] private TextAsset eventJsonFile;
+    [SerializeField] private TextAsset eventCsvFile;
     private int currentEventIndex = 0;
 
     private EventData currentEventData;
@@ -54,26 +41,40 @@ public class EventManager : MonoBehaviour
 
     void Awake()
     {
-        //Jsonファイルからイベントデータを読み込み
-        EventDataContainer loadedData = JsonUtility.FromJson<EventDataContainer>(eventJsonFile.text);
-        eventList = loadedData.eventData;
-        //イベントIDを設定及び時計のように位置をJSONに書いたので、それを調整する
-        for (int i = 0; i < eventList.Count; i++)
-        {
-            eventList[i].eventId = i;
-            eventList[i].colliderPositionNum = eventList[i].clockColliderPosition - 1;
-            eventList[i].spawnPositionNum = eventList[i].clockSpawnPosition - 1;
+        //eventCsvFileを行ごとに分けて、空白があった場合は無視する
+        string[] lines = eventCsvFile.text.Split(new char[] { '\n', '\r' },
+            System.StringSplitOptions.RemoveEmptyEntries);
 
-            //JSONの文字列からEnum型へ変換する
-            if (System.Enum.TryParse(eventList[i].eventTypeStr, out EventType parsedType))
+        for (int i = 1; i < lines.Length; i++)
+        {
+            //一つずつの区切りを分ける
+            string[] values = lines[i].Split(',');
+
+            //データが足りてないやつは無視する
+            if (values.Length < 4) continue;
+
+            EventData newData = new EventData();
+            newData.eventId = i - 1;
+
+            //読み込んだ文字列をEnumに変換して直接代入
+            if (System.Enum.TryParse(values[0], out EventType parsedType))
             {
-                eventList[i].eventType = parsedType;
+                newData.eventType = parsedType;
             }
             else
             {
-                eventList[i].eventType = EventType.EventType_None;
-                Debug.LogError("無効なEventType文字列です: " + eventList[i].eventTypeStr);
+                newData.eventType = EventType.EventType_None;
+                Debug.LogError("無効なEventType文字列です(行 " + (i + 1) + "): " + values[0]);
             }
+
+            //Parseで左の指定した型で読み込む
+            //読み込んだ数値をその場で計算（- 1）して直接代入
+            newData.colliderPositionNum = int.Parse(values[1]) - 1;
+            newData.spawnPositionNum = int.Parse(values[2]) - 1;
+            newData.dropDelayTime = float.Parse(values[3]);
+
+            //作ったデータをリストに入れる
+            eventList.Add(newData);
         }
     }
 
