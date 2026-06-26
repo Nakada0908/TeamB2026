@@ -41,41 +41,7 @@ public class EventManager : MonoBehaviour
 
     void Awake()
     {
-        //eventCsvFileを行ごとに分けて、空白があった場合は無視する
-        string[] lines = eventCsvFile.text.Split(new char[] { '\n', '\r' },
-            System.StringSplitOptions.RemoveEmptyEntries);
-
-        for (int i = 1; i < lines.Length; i++)
-        {
-            //一つずつの区切りを分ける
-            string[] values = lines[i].Split(',');
-
-            //データが足りてないやつは無視する
-            if (values.Length < 4) continue;
-
-            EventData newData = new EventData();
-            newData.eventId = i - 1;
-
-            //読み込んだ文字列をEnumに変換して直接代入
-            if (System.Enum.TryParse(values[0], out EventType parsedType))
-            {
-                newData.eventType = parsedType;
-            }
-            else
-            {
-                newData.eventType = EventType.EventType_None;
-                Debug.LogError("無効なEventType文字列です(行 " + (i + 1) + "): " + values[0]);
-            }
-
-            //Parseで左の指定した型で読み込む
-            //読み込んだ数値をその場で計算（- 1）して直接代入
-            newData.colliderPositionNum = int.Parse(values[1]) - 1;
-            newData.spawnPositionNum = int.Parse(values[2]) - 1;
-            newData.dropDelayTime = float.Parse(values[3]);
-
-            //作ったデータをリストに入れる
-            eventList.Add(newData);
-        }
+        LoadCsvList();
     }
 
     private void Start()
@@ -94,15 +60,12 @@ public class EventManager : MonoBehaviour
             return;
         }
 
-        //次のイベントデータからイベント地点の位置と回転を取得して、コライダーを移動させる
         currentEventData = eventList[currentEventIndex];
         currentTargetPoint = eventPos.eventPoints[currentEventData.colliderPositionNum];
 
-        //自身を移動
         transform.position = currentTargetPoint.position;
         transform.rotation = currentTargetPoint.rotation;
 
-        //次のイベントへ進めておく
         currentEventIndex++;
     }
 
@@ -137,6 +100,41 @@ public class EventManager : MonoBehaviour
         else
         {
             Debug.LogError("存在しないイベントを指定してるよ！ID:"+currentEvent.eventId);
+        }
+    }
+
+    private void LoadCsvList()
+    {
+        //eventCsvFileを行ごとに分けて、空白があった場合は無視する
+        string[] lines = eventCsvFile.text.Split(new char[] { '\n', '\r' },
+            System.StringSplitOptions.RemoveEmptyEntries);
+
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] values = lines[i].Split(',');
+
+            if (values.Length < 4) continue;
+
+            EventData newData = new EventData();
+            newData.eventId = i - 1;
+
+            //読み込んだ文字列をEnumに変換して直接代入
+            if (System.Enum.TryParse(values[0], out EventType parsedType))
+            {
+                newData.eventType = parsedType;
+            }
+            else
+            {
+                newData.eventType = EventType.EventType_None;
+                Debug.LogError("無効なEventType文字列です(行 " + (i + 1) + "): " + values[0]);
+            }
+
+            //各項目の調整
+            newData.colliderPositionNum = int.Parse(values[1]) - 1;
+            newData.spawnPositionNum = int.Parse(values[2]) - 1;
+            newData.dropDelayTime = float.Parse(values[3]);
+
+            eventList.Add(newData);
         }
     }
 
