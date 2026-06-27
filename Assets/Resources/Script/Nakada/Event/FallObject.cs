@@ -15,22 +15,6 @@ public class FallObject : MonoBehaviour
         {
             rb.isKinematic = true;
         }
-
-        //プレイヤーに当たったとき動けなくする
-        //……なんかうまくいってないかも(´・ω・｀)
-        //if (col.gameObject.CompareTag("Player"))
-        //{
-        //    col.rigidbody.isKinematic = true;
-        //}
-    }
-
-    private void OnCollisionExit(Collision col)
-    {
-        //プレイヤーから離れたとき動けるようにする
-        //if (col.gameObject.CompareTag("Player"))
-        //{
-        //    col.rigidbody.isKinematic = false;
-        //}
     }
 }
 

@@ -141,11 +141,16 @@ public class EventManager : MonoBehaviour
     #region オブジェクトの読み込み
     private void LoadObjects()
     {
+        string eventFoldar = "Script/Nakada/Event/";
+
+        //エラー防止の空オブジェクト
+        dropObjects[EventType.EventType_None] = Resources.Load<GameObject>(eventFoldar+"NoneObject");
+
         //障害物のスポーン
-        dropObjects[EventType.HasiraSpawn]= Resources.Load<GameObject>("Script/Nakada/Hasira");
+        dropObjects[EventType.HasiraSpawn]= Resources.Load<GameObject>(eventFoldar+"Hasira");
 
         //敵のスポーン
-        dropObjects[EventType.EnemySpawn]= Resources.Load<GameObject>("Script/Nakada/Enemy");
+        dropObjects[EventType.EnemySpawn]= Resources.Load<GameObject>(eventFoldar+"Enemy");
     }
     #endregion
 }
