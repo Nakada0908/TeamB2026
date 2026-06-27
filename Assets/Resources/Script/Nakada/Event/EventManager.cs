@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EventType
+public enum EEventType
 {
     EventType_None = 0,
     //イベントの種類を定義
@@ -18,7 +18,7 @@ public class EventData
     //自動設定されるもの
     public int eventId;
     //dropTypeStrをEventTypeに変換
-    public EventType eventType;
+    public EEventType eventType;
     //コライダー移動地点、生成地点を配列用に変換
     public int colliderPositionNum;
     public int spawnPositionNum;
@@ -30,7 +30,7 @@ public class EventManager : MonoBehaviour
     //出現位置
     [SerializeField] private SetEventPos eventPos;
     //出現オブジェクトをTypeとオブジェクトをセットにして設定
-    private Dictionary<EventType, GameObject> dropObjects = new Dictionary<EventType, GameObject>();
+    private Dictionary<EEventType, GameObject> dropObjects = new Dictionary<EEventType, GameObject>();
     //イベントのデータ
     [SerializeField] private List<EventData> eventList = new List<EventData>();
     [SerializeField] private TextAsset eventCsvFile;
@@ -119,13 +119,13 @@ public class EventManager : MonoBehaviour
             newData.eventId = i - 1;
 
             //読み込んだ文字列をEnumに変換して直接代入
-            if (System.Enum.TryParse(values[0], out EventType parsedType))
+            if (System.Enum.TryParse(values[0], out EEventType parsedType))
             {
                 newData.eventType = parsedType;
             }
             else
             {
-                newData.eventType = EventType.EventType_None;
+                newData.eventType = EEventType.EventType_None;
                 Debug.LogError("無効なEventType文字列です(行 " + (i + 1) + "): " + values[0]);
             }
 
@@ -144,13 +144,13 @@ public class EventManager : MonoBehaviour
         string eventFoldar = "Script/Nakada/Event/";
 
         //エラー防止の空オブジェクト
-        dropObjects[EventType.EventType_None] = Resources.Load<GameObject>(eventFoldar+"NoneObject");
+        dropObjects[EEventType.EventType_None] = Resources.Load<GameObject>(eventFoldar+"NoneObject");
 
         //障害物のスポーン
-        dropObjects[EventType.HasiraSpawn]= Resources.Load<GameObject>(eventFoldar+"Hasira");
+        dropObjects[EEventType.HasiraSpawn]= Resources.Load<GameObject>(eventFoldar+"Hasira");
 
         //敵のスポーン
-        dropObjects[EventType.EnemySpawn]= Resources.Load<GameObject>(eventFoldar+"Enemy");
+        dropObjects[EEventType.EnemySpawn]= Resources.Load<GameObject>(eventFoldar+"Enemy");
     }
     #endregion
 }
