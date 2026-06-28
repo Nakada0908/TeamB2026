@@ -141,7 +141,7 @@ public class EventManager : MonoBehaviour
     #region オブジェクトの読み込み
     private void LoadObjects()
     {
-        string eventFoldar = "Script/Nakada/Event/";
+        string eventFoldar = "Script/Nakada/Event/EventObjecs/";
 
         //エラー防止の空オブジェクト
         dropObjects[EEventType.EventType_None] = Resources.Load<GameObject>(eventFoldar+"NoneObject");
