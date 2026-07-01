@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 256791107156836653}
   - component: {fileID: 605100657367347477}
   - component: {fileID: 3252793005233916319}
+  - component: {fileID: 576682483851376169}
   m_Layer: 0
   m_Name: RightMoveNui
   m_TagString: Untagged
@@ -95,6 +96,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e5febc4d505c4498ba28dbf4f35232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &576682483851376169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809696751662408023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17823ddbd961ad40b1f455d9424da65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRightRotation: 1
+  rotationSpeed: 10
 --- !u!1001 &9006557846586585402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,6 +172,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5660042361259378056, guid: 3dae6ba29711af04e9648db34d810871, type: 3}
+    - {fileID: 550888176885152588, guid: 3dae6ba29711af04e9648db34d810871, type: 3}
+    - {fileID: 4225476915199855902, guid: 3dae6ba29711af04e9648db34d810871, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
