@@ -87,7 +87,7 @@ public class EventManager : MonoBehaviour
     }
 
     //共通のイベント発生処理
-    public void ActivateEvent(EventData currentEvent, EventPointData targetPoint)
+    private void ActivateEvent(EventData currentEvent, EventPointData targetPoint)
     {
         //イベントタイプがあったらオブジェクトを取得する
         if (dropObjects.TryGetValue(currentEvent.eventType, out GameObject prefab))
@@ -141,7 +141,7 @@ public class EventManager : MonoBehaviour
     #region オブジェクトの読み込み
     private void LoadObjects()
     {
-        string eventFoldar = "Script/Nakada/Event/";
+        string eventFoldar = "Script/Nakada/Event/EventObjecs/";
 
         //エラー防止の空オブジェクト
         dropObjects[EEventType.EventType_None] = Resources.Load<GameObject>(eventFoldar+"NoneObject");
@@ -150,7 +150,7 @@ public class EventManager : MonoBehaviour
         dropObjects[EEventType.HasiraSpawn]= Resources.Load<GameObject>(eventFoldar+"Hasira");
 
         //敵のスポーン
-        dropObjects[EEventType.EnemySpawn]= Resources.Load<GameObject>(eventFoldar+"Enemy");
+        dropObjects[EEventType.EnemySpawn]= Resources.Load<GameObject>(eventFoldar+ "RightMoveNui");
     }
     #endregion
 }
