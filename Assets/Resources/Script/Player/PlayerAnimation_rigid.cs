@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using UnityEngine.Animations;
 public class PlayerAnimation_rigid : MonoBehaviour
 {
     public Animator animator;
     public PlayerManager_Rigid playerManager;
+    
 
     Quaternion targetRotation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
