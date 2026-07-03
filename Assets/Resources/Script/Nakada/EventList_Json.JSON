@@ -1,0 +1,28 @@
+{
+  "eventData": [
+    {
+      "eventTypeStr": "HasiraSpawn",
+      "clockColliderPosition": 7,
+      "clockSpawnPosition": 9,
+      "dropDelayTime": 0
+    },
+    {
+      "eventTypeStr": "EnemySpawn",
+      "clockColliderPosition": 9,
+      "clockSpawnPosition": 12,
+      "dropDelayTime": 0
+    },
+    {
+      "eventTypeStr": "HasiraSpawn",
+      "clockColliderPosition": 12,
+      "clockSpawnPosition": 1,
+      "dropDelayTime": 0
+    },
+    {
+      "eventTypeStr": "HasiraSpawn",
+      "clockColliderPosition": 1,
+      "clockSpawnPosition": 5,
+      "dropDelayTime": 0
+    }
+  ]
+}
