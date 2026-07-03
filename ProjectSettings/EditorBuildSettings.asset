@@ -44,12 +44,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/Stage3Eyes.unity
     guid: 16ba4ca1a71607f4297b4ef192f67919
+  - enabled: 1
+    path: Assets/Resources/Scenes/StageBoss.unity
+    guid: a8caefede6149514abaf89c0e1d12b05
+  - enabled: 1
+    path: Assets/Resources/Scenes/LookBack.unity
+    guid: fde4d00d6f48c7b4a89d453a4cdec743
   - enabled: 0
     path: Assets/Resources/Scenes/Yoshinobu/Stage3Eyes_Yoshi.unity
     guid: f34289078ee4f3a45a302a7a0c8dfffe
   - enabled: 1
     path: Assets/Resources/Scenes/EndingScene.unity
     guid: 479c3eb43caee7b4a992851677b7d28a
+  - enabled: 1
+    path: Assets/Resources/Scenes/Ichinose/ichinose.unity
+    guid: dd59053ae903c0447b2dc127141efccf
+  - enabled: 1
+    path: Assets/Resources/Scenes/Oonari/oonari.unity
+    guid: 191e6a7c1a934c945bd59c45c8feace3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 856b976ce7f52f8478080bc448f62cc8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: f2b4b6693dd84ba4293893fb75f3ee01, type: 3}
