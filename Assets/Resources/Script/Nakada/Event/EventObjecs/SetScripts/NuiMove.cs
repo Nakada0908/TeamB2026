@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NuiMove : MonoBehaviour
 {
-    [SerializeField] private bool isRightRotation = true;
+    [SerializeField] private bool isLeftRotation = true;
     private float LR;
     [SerializeField] private float rotationSpeed = 10f;
     private bool isOnGround = false;
@@ -11,7 +11,7 @@ public class NuiMove : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        LR = isRightRotation ? 1f : -1f;
+        LR = isLeftRotation ? 1f : -1f;
     }
 
     private void FixedUpdate()
@@ -40,6 +40,15 @@ public class NuiMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+            if(isLeftRotation)
+            {
+                //今後アニメーションでの回転ないしはコルーチンで回そ
+                transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            }
         }
     }
 }
