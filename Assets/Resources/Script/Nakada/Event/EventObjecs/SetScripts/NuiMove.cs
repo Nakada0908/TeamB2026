@@ -42,7 +42,6 @@ public class NuiMove : MonoBehaviour
             isOnGround = true;
             if(isLeftRotation)
             {
-                //今後アニメーションでの回転ないしはコルーチンで回そ
                 transform.rotation = Quaternion.Euler(0f, 90f, 0f);
             }
             else
