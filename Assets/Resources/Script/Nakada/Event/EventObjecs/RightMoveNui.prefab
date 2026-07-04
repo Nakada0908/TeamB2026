@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8199733993809768312, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d4d539675ed0cb04180b32f00528a470, type: 2}
     m_RemovedComponents:
     - {fileID: 374483057349096045, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
     - {fileID: 4112981557156184488, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
