@@ -4,14 +4,17 @@ public class NuiMove : MonoBehaviour
 {
     [SerializeField] private bool isLeftRotation = true;
     private float LR;
-    [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private float rotationSpeed = 7f;
     private bool isOnGround = false;
     private Rigidbody rb;
+
+    private Animator walkAnime;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         LR = isLeftRotation ? 1f : -1f;
+        walkAnime = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -43,10 +46,12 @@ public class NuiMove : MonoBehaviour
             if(isLeftRotation)
             {
                 transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                walkAnime.SetTrigger("walk");
             }
             else
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                walkAnime.SetTrigger("walk");
             }
         }
     }

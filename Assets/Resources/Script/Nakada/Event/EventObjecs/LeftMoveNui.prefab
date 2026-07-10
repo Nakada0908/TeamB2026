@@ -118,6 +118,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6547703405719726082}
     m_Modifications:
+    - target: {fileID: 1034366475867460568, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6051884
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034366475867460568, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.009711583
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034366475867460568, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0073836916
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034366475867460568, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7959888
+      objectReference: {fileID: 0}
     - target: {fileID: 6369435588879556781, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -162,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8199733993809768312, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d4d539675ed0cb04180b32f00528a470, type: 2}
     m_RemovedComponents:
     - {fileID: 374483057349096045, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
     - {fileID: 4112981557156184488, guid: a27bb2440d077b240aa3577f434551f9, type: 3}
