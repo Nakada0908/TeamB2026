@@ -15,6 +15,9 @@ public class SavePoint : MonoBehaviour
 
     private Vector3 newPos;
 
+    [Header("光加減の調整")]
+    [SerializeField] private float lightPower = 10f;
+    [SerializeField] private float lightFadeTime = 1f;
     private Light lightComponent;
 
     private void Awake()
@@ -31,7 +34,7 @@ public class SavePoint : MonoBehaviour
         {
             PlayerSaveManager.instance.SavePlayerPosition(newPos, savePointType);
             Debug.Log("New SavePoint: " + newPos);
-            StartCoroutine(FadeInLight(10f, 1f));
+            StartCoroutine(FadeInLight(lightPower, lightFadeTime));
             GetComponent<Collider>().enabled = false;
         }
     }
