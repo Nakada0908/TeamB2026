@@ -21,13 +21,13 @@ public class PlayerAnimation_Boss : MonoBehaviour
         animator.SetFloat("speedX", Mathf.Abs(TestMove.horizontal));
 
         //進行方向に合わせて回転する。
-        if (TestMove.horizontal > 0)
+        if (TestMove.horizontal < 0)
         {
             //右
             targetRotation = Quaternion.Euler(0, 170f, 0);
             transform.Rotate(new Vector3(0, 0, 0));
         }
-        else if (TestMove.horizontal < 0)
+        else if (TestMove.horizontal > 0)
         {
             //左
             targetRotation = Quaternion.Euler(0, 0f, 0);
