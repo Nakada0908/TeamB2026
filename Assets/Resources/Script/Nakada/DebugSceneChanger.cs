@@ -5,6 +5,13 @@ public class DebugSceneChanger : MonoBehaviour
 {
     public static DebugSceneChanger instance;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void AutoInitialize()
+    {
+        GameObject managerObj = new GameObject("DebugSceneChanger");
+        managerObj.AddComponent<DebugSceneChanger>();
+    }
+
     private void Awake()
     {
         if (instance == null)
