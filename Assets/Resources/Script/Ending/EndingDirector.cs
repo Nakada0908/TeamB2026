@@ -18,12 +18,14 @@ public class EndingDirector : MonoBehaviour
     [Header("感情パラメータ")]
     public float cutsceneTurnSpeed = 2.5f;  
     public float cutsceneWalkSpeed = 3.0f;  
-    public float waveDuration = 2.5f; 
 
     private PlayerManager_Rigid playerController;
     private PlayerAnimation_rigid playerAnim;
-    private float originalTurnSpeed;
-    private float originalWalkSpeed;
+
+    //private float originalTurnSpeed;
+    //private float originalWalkSpeed;
+
+    private bool hasTriggered = false;
 
     void Start()
     {
@@ -31,16 +33,24 @@ public class EndingDirector : MonoBehaviour
         
         playerAnim = player.GetComponentInChildren<PlayerAnimation_rigid>();
 
+        //StartCoroutine(PlayEndingCutscene());
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (hasTriggered || !other.CompareTag("Player")) return;
+
+        // 锁上安全锁
+        hasTriggered = true;
+        Debug.Log("进入判定区，接管玩家控制权！");
+
+        // 正式开始演出
         StartCoroutine(PlayEndingCutscene());
     }
-
     IEnumerator PlayEndingCutscene()
     {
         // 1.
         playerController.isCutsceneMode = true;
-
-        originalTurnSpeed = playerAnim.turnSpeed;
-        originalWalkSpeed = playerController.maxSpeed;
+        playerController.simulatedMoveInput = Vector2.zero;
 
         playerAnim.turnSpeed = cutsceneTurnSpeed;      
         playerController.maxSpeed = cutsceneWalkSpeed; 
@@ -90,12 +100,7 @@ public class EndingDirector : MonoBehaviour
         // 
         yield return new WaitForSeconds(secondStareTime);
 
-        Debug.Log("wave animation");
-        playerAnim.animator.SetTrigger("wave");
-
-        yield return new WaitForSeconds(waveDuration);
-
-        // 9.leave
+        // 8.leave
         playerController.simulatedMoveInput = new Vector2(1f, 0f);
         yield return new WaitForSeconds(leaveScreeenTime);
 
