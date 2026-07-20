@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d4454f71d85928744be7771e2143dab7, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 369b9ebe3a62b904dbc19bd332b44086, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1425,8 +1425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oldWall: []
   newWall: []
-  player: {fileID: 0}
-  boss: {fileID: 0}
+  player: {fileID: 152687360}
+  boss: {fileID: 1332267067}
 --- !u!4 &648560277
 Transform:
   m_ObjectHideFlags: 0
@@ -3481,8 +3481,8 @@ MonoBehaviour:
   - {fileID: 1737817075}
   - {fileID: 1492310925}
   - {fileID: 1914423017}
-  player: {fileID: 0}
-  boss: {fileID: 0}
+  player: {fileID: 152687360}
+  boss: {fileID: 1332267067}
 --- !u!4 &1592301433
 Transform:
   m_ObjectHideFlags: 0
@@ -4944,7 +4944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3575080119734380553, guid: 93383f7996461644da39b297454f8f91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 3575080119734380553, guid: 93383f7996461644da39b297454f8f91, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4952,7 +4952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3575080119734380553, guid: 93383f7996461644da39b297454f8f91, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 3575080119734380553, guid: 93383f7996461644da39b297454f8f91, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5084,7 +5084,7 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.90013444, b: 0.7452829, a: 1}
-  m_Intensity: 0.3
+  m_Intensity: 1
   m_Range: 0.8
   m_SpotAngle: 179
   m_InnerSpotAngle: 4.739315
