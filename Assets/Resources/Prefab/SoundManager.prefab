@@ -237,6 +237,8 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: c660e2e7cae5513478c8b80ff4b5377a, type: 3}
   - SoundName: Chuubosu
     audioClip: {fileID: 8300000, guid: 0c2a8ac81d54c2742a2d7477c5d04329, type: 3}
+  - SoundName: StageBoss
+    audioClip: {fileID: 8300000, guid: 0729549ee628a6f43a348f146096cd28, type: 3}
 --- !u!1 &8018930085912281983
 GameObject:
   m_ObjectHideFlags: 0
