@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerCamera_Boss : MonoBehaviour
 {
+
     public Transform CenterPoint;
     public Transform target;
     public testmove TestMove;
@@ -9,26 +10,30 @@ public class PlayerCamera_Boss : MonoBehaviour
     Vector3 defalutCameraOffset;    //デフォルトカメラ位置
     Quaternion defalutCameraDir;    //デフォルトカメラ方向
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        defalutCameraDir = transform.rotation;
-        defalutCameraOffset = transform.position - target.position;
-
-    }
-
+   
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        //敵とプレイヤーのベクトルを調べる
+        Vector3 enemyOffset = target.position - CenterPoint.position;
+        //正規化する。距離を取りやすいように
+        enemyOffset.Normalize();
+        //プレイヤーとカメラの距離の位置
+        transform.position = target.position + (enemyOffset * 5f);
+        //カメラが見つめる位置
+        Vector3 Target = target.position + new Vector3(0, 1.5f, 0);
+        //lookatでプレイヤー座標を見る
+        transform.LookAt(Target);
+
+
         if (TestMove.horizontal > 0)
         {
             transform.RotateAround(CenterPoint.position, Vector3.up, -TestMove.speed * Time.deltaTime);
         }
-        else if(TestMove.horizontal < 0)
+        else if (TestMove.horizontal < 0)
         {
             transform.RotateAround(CenterPoint.position, Vector3.up, TestMove.speed * Time.deltaTime);
         }
-        
+
     }
 }
