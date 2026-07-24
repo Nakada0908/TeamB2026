@@ -20,17 +20,18 @@ public class PlayerAnimation_Boss : MonoBehaviour
         animator.SetFloat("speedX", Mathf.Abs(TestMove.horizontal));
 
         //進行方向に合わせて回転する。
+        ///HACK:Playerごと回転してしまう、Playerの方向を常に右に
         if (TestMove.horizontal < 0)
         {
             //右
             targetRotation = Quaternion.Euler(0, 170f, 0);
-            transform.Rotate(new Vector3(0, 0, 0));
+            
         }
         else if (TestMove.horizontal > 0)
         {
             //左
             targetRotation = Quaternion.Euler(0, 0f, 0);
-            transform.Rotate(new Vector3(0, 0, 0));
+            
         }
         
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
