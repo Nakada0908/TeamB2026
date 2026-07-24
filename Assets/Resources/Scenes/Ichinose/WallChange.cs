@@ -2,47 +2,49 @@ using UnityEngine;
 
 public class WallChange : MonoBehaviour
 {
-    private bool[] changed;
     public GameObject[] oldWall;
     public GameObject[] newWall;
+
+
+    private float totalRotation = 0f;
+    private int index = 0;
     public Transform player;
     public Transform boss;
+
+    private float previousAngle;
+    private bool passedZero = false;
+
+
+    void Start()
+    {
+
+        for (int i = 0; i < oldWall.Length; i++)
+        {
+            oldWall[i].SetActive(true);
+            newWall[i].SetActive(false);
+        }
+
+        Vector3 dir = player.position - boss.position;
+
+        previousAngle = Mathf.Atan2(dir.z, dir.x) * Mathf.Rad2Deg;
+
+        if (previousAngle < 0)
+            previousAngle += 360f;
+
+    }
+
     public void ChangeWall(int index)
     {
+        Debug.Log("ChangeWall : " + index);
+        Debug.Log("Old : " + oldWall[index].name);
+        Debug.Log("New : " + newWall[index].name);
+
         oldWall[index].SetActive(false);
         newWall[index].SetActive(true);
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        for(int i = 0; i < newWall.Length; i++)
-        {
-            newWall[i].SetActive(false);
-            oldWall[i].SetActive(true);
-        }
-        //changed = new bool[oldWall.Length];
 
-        //for (int i = 0; i < newWall.Length; i++)
-        //{
-        //    newWall[i].SetActive(false);
-        //    oldWall[i].SetActive(true);
-        //    changed[i] = false;
-        //}
-    }
-
-    int index = 0;
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    if(index < oldWall.Length)
-        //    {
-        //        ChangeWall(index);
-        //        index++;
-        //    }
-        //}
-        // プレイヤーからボスへの方向
         Vector3 dir = player.position - boss.position;
 
         float angle = Mathf.Atan2(dir.z, dir.x) * Mathf.Rad2Deg;
@@ -50,14 +52,28 @@ public class WallChange : MonoBehaviour
         if (angle < 0)
             angle += 360f;
 
-        int currentIndex = Mathf.FloorToInt(angle / 22.5f);
-        currentIndex = Mathf.Clamp(currentIndex, 0, oldWall.Length - 1);
+        // 前フレームからどれだけ回転したか
+        float delta = Mathf.DeltaAngle(previousAngle, angle);
 
-        if (!changed[currentIndex])
+        // 回転量を加算
+        totalRotation += delta;
+
+        // Debug用
+        Debug.Log("回転量 = " + totalRotation);
+
+        // 1周したら壁を切り替え
+        if (Mathf.Abs(totalRotation) >= 360f)
         {
-            ChangeWall(currentIndex);
-            changed[currentIndex] = true;
+            if (index < oldWall.Length)
+            {
+                ChangeWall(index);
+                index++;
+            }
+
+            // 次の1周を数えるためリセット
+            totalRotation = 0f;
         }
 
+        previousAngle = angle;
     }
 }
