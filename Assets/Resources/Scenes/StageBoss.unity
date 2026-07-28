@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d4454f71d85928744be7771e2143dab7, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 369b9ebe3a62b904dbc19bd332b44086, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -270,7 +270,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 152687360}
-  - component: {fileID: 152687359}
   - component: {fileID: 152687358}
   - component: {fileID: 152687357}
   m_Layer: 0
@@ -308,7 +307,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152687356}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -346,14 +345,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &152687359
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152687356}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &152687360
 Transform:
   m_ObjectHideFlags: 0
@@ -616,6 +607,10 @@ PrefabInstance:
     - target: {fileID: 3190988311693223913, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 8.863146e-18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699772720118559673, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3708910266987414946, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1425,8 +1420,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oldWall: []
   newWall: []
-  player: {fileID: 0}
-  boss: {fileID: 0}
+  player: {fileID: 224312910}
+  boss: {fileID: 1332267067}
 --- !u!4 &648560277
 Transform:
   m_ObjectHideFlags: 0
@@ -3481,8 +3476,8 @@ MonoBehaviour:
   - {fileID: 1737817075}
   - {fileID: 1492310925}
   - {fileID: 1914423017}
-  player: {fileID: 0}
-  boss: {fileID: 0}
+  player: {fileID: 224312910}
+  boss: {fileID: 1332267067}
 --- !u!4 &1592301433
 Transform:
   m_ObjectHideFlags: 0
