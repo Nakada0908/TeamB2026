@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerAnimation_Boss : MonoBehaviour
 {
@@ -19,22 +20,22 @@ public class PlayerAnimation_Boss : MonoBehaviour
         animator.SetFloat("velocityX", animVelocityX);
         animator.SetFloat("speedX", Mathf.Abs(TestMove.horizontal));
 
+        TestMove.horizontal = Input.GetAxisRaw("Horizontal");
         //進行方向に合わせて回転する。
-        ///HACK:Playerごと回転してしまう、Playerの方向を常に右に
-        if (TestMove.horizontal < 0)
+        /// HACK:Playerごと回転してしまう、Playerの方向を常に右に
+        if (TestMove.horizontal > 0)
         {
             //右
-            targetRotation = Quaternion.Euler(0, 170f, 0);
-            
+            //targetRotation = Quaternion.Euler(0, 170f, 0);
+            gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+
         }
-        else if (TestMove.horizontal > 0)
+        else if (TestMove.horizontal < 0)
         {
             //左
-            targetRotation = Quaternion.Euler(0, 0f, 0);
             
+            gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
         }
-        
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
     }
 }
 
