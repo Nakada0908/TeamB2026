@@ -4,6 +4,7 @@ public class playerRihtHit : MonoBehaviour
 {
     private bool hiding;
 
+    #region 敵との接触判定
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("LightHitBox_Hide"))
@@ -46,5 +47,7 @@ public class playerRihtHit : MonoBehaviour
     private void Death()
     {
         //死んだときの処理を書く
+        Debug.Log("死亡～");
     }
+    #endregion
 }
