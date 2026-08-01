@@ -7,19 +7,19 @@ public class playerRihtHit : MonoBehaviour
     #region 敵との接触判定
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("LightHitBox_Hide"))
+        if (other.gameObject.CompareTag(TagConsts.LightHitBox_Hide))
         {
             hiding = true;
         }
 
-        if (other.gameObject.CompareTag("LightHitBox"))
+        if (other.gameObject.CompareTag(TagConsts.LightHitBox))
         {
             if (!hiding)
             {
                 Death();
             }
         }
-        if(other.gameObject.CompareTag("Monster"))
+        if(other.gameObject.CompareTag(TagConsts.Monster))
         {
             Death();
         }
@@ -27,7 +27,7 @@ public class playerRihtHit : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("LightHitBox"))
+        if (other.gameObject.CompareTag(TagConsts.LightHitBox))
         {
             if (!hiding)
             {
@@ -38,7 +38,7 @@ public class playerRihtHit : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("LightHitBox_Hide"))
+        if (other.gameObject.CompareTag(TagConsts.LightHitBox_Hide))
         {
             hiding = false;
         }
