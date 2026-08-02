@@ -1,11 +1,17 @@
 using UnityEngine;
 
-public class playerRihtHit : MonoBehaviour
+public class PlayerHit : MonoBehaviour
 {
     private bool hiding;
 
-    #region 敵との接触判定
-    void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag(TagConsts.Monster))
+        {
+            Death();
+        }
+    }
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(TagConsts.LightHitBox_Hide))
         {
@@ -18,10 +24,6 @@ public class playerRihtHit : MonoBehaviour
             {
                 Death();
             }
-        }
-        if(other.gameObject.CompareTag(TagConsts.Monster))
-        {
-            Death();
         }
     }
 
@@ -49,5 +51,4 @@ public class playerRihtHit : MonoBehaviour
         //死んだときの処理を書く
         Debug.Log("死亡～");
     }
-    #endregion
 }
