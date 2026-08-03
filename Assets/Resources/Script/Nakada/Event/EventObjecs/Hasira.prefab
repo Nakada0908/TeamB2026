@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1254356602792120738}
   - component: {fileID: 8873173591780169937}
+  - component: {fileID: 6060728769326107453}
   - component: {fileID: 7461911819703103118}
   - component: {fileID: 7430850405853695547}
-  - component: {fileID: 6060728769326107453}
   m_Layer: 0
   m_Name: Hasira
   m_TagString: Untagged
@@ -63,6 +63,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &6060728769326107453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6116129437680482159}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.40223354, y: 0.39660424, z: 1}
+  m_Center: {x: -0.029092312, y: 0.0011687279, z: 0}
 --- !u!114 &7461911819703103118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,27 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e5febc4d505c4498ba28dbf4f35232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &6060728769326107453
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6116129437680482159}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.40223354, y: 0.39660424, z: 1}
-  m_Center: {x: -0.029092312, y: 0.0011687279, z: 0}
 --- !u!1001 &4537960241660855756
 PrefabInstance:
   m_ObjectHideFlags: 0
