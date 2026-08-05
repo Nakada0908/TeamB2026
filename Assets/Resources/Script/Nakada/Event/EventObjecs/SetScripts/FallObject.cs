@@ -11,7 +11,7 @@ public class FallObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("Ground"))
+        if (col.gameObject.CompareTag(TagConsts.Ground))
         {
             rb.isKinematic = true;
         }

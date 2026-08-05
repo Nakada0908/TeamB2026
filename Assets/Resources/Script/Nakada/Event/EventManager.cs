@@ -6,10 +6,12 @@ public enum EEventType
 {
     EventType_None = 0,
     //イベントの種類を定義
-    HasiraSpawn = 1,
+    Hasira = 1,
 
-    LeftNuiSpawn = 100,
-    RightNuiSpawn =101,
+    LeftNui = 100,
+    RightNui =101,
+
+    Eye =110,
 }
 
 //読み込み用のクラス
@@ -148,11 +150,13 @@ public class EventManager : MonoBehaviour
         dropObjects[EEventType.EventType_None] = Resources.Load<GameObject>(eventFoldar+"NoneObject");
 
         //障害物のスポーン
-        dropObjects[EEventType.HasiraSpawn]= Resources.Load<GameObject>(eventFoldar+"Hasira");
+        dropObjects[EEventType.Hasira]= Resources.Load<GameObject>(eventFoldar+"Hasira");
 
         //敵のスポーン
-        dropObjects[EEventType.LeftNuiSpawn]= Resources.Load<GameObject>(eventFoldar+ "LeftMoveNui");
-        dropObjects[EEventType.RightNuiSpawn] = Resources.Load<GameObject>(eventFoldar + "RightMoveNui");
+        dropObjects[EEventType.LeftNui]= Resources.Load<GameObject>(eventFoldar+ "LeftMoveNui");
+        dropObjects[EEventType.RightNui] = Resources.Load<GameObject>(eventFoldar + "RightMoveNui");
+
+        dropObjects[EEventType.Eye] = Resources.Load<GameObject>(eventFoldar + "Eye");
     }
     #endregion
 }

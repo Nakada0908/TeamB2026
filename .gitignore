@@ -72,7 +72,9 @@ mono_crash.*
 *.unitypackage
 *.unitypackage.meta
 *.app
-*.fbx #FBXをはじく
+
+#FBXをはじく
+*.fbx
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -107,5 +109,15 @@ InitTestScene*.unity*
 /[Aa]ssets/ScansFactory.meta
 /[Aa]ssets/Raygeas/
 /[Aa]ssets/Raygeas.meta
-Assets/FBX/
-Assets/SkySeries Freebie/
+/[Aa]ssets/FBX/
+/[Aa]ssets/FBX.meta
+#Sound系
+/[Aa]ssets/Romantic Piano Music Pack/
+/[Aa]ssets/Romantic Piano Music Pack.meta
+/[Aa]ssets/Time Sound FX/
+/[Aa]ssets/Time Sound FX.meta
+#SkyBoxe系
+/[Aa]ssets/SkySeries Freebie/
+/[Aa]ssets/SkySeries Freebie.meta
+/[Aa]ssets/AAA Space & Nebula HDRI Pack – 11 Ultra HD 8K Skyboxes (EXR + JPG)/
+/[Aa]ssets/AAA Space & Nebula HDRI Pack – 11 Ultra HD 8K Skyboxes (EXR + JPG).meta
