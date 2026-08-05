@@ -1,3 +1,6 @@
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//Playerの動き、回転
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 using UnityEngine;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
@@ -26,14 +29,13 @@ public class PlayerAnimation_Boss : MonoBehaviour
         if (TestMove.horizontal > 0)
         {
             //右
-            //targetRotation = Quaternion.Euler(0, 170f, 0);
             gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
 
         }
         else if (TestMove.horizontal < 0)
         {
             //左
-            
+
             gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
         }
     }

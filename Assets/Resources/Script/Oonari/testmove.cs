@@ -1,52 +1,57 @@
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//Playerの移動
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+using System.Security.Cryptography;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class testmove : MonoBehaviour
 {
-    public Transform centerPoint; // 回転の中心となるオブジェクト
-    public float radius = 5f;     // 半径
-    public float speed = 10f;     // 回転速度（度/秒）
-    public float horizontal;
-
-    private Rigidbody rb;         //Rigidbodyの呼び出し
-    public float angle;           //角度
-    
-  
+    public float radius = 5f;          // 半径
+    public float speed = 10f;          // 移動速度
+    public float horizontal;　　　     // 入力元
+    public Transform centerPoint;      // 回転の中心となるオブジェクト
+                                       // 
+    private float rotationSpeed = 360f; // 回転速度
+    private float angle;              //角度
+    private float rayDistance = 0.3f; //レイの長さ
+    private float rayOffset   = 0.5f;
+    private Rigidbody rb;             //Rigidbodyの呼び出し
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-
-    public float rotationSpeed = 360f; // 回転速度
-
-
-    //ジェヒちゃんが作ってくれたAI---------------------------------------------
-    // Update is called once per frame
     void FixedUpdate()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        float nextangle = angle;
 
+        horizontal = Input.GetAxisRaw("Horizontal");
+        //playerの移動
         if (horizontal > 0)
         {
             //右
-            angle += speed * Time.fixedDeltaTime;
+            nextangle += speed * Time.fixedDeltaTime;
         }
         else if (horizontal < 0)
         {
             //左
-            angle -= speed * Time.fixedDeltaTime;
+            nextangle -= speed * Time.fixedDeltaTime;
+
         }
 
+        ///NOTE:playerが中央のオブジェクトの周りを周回する。
         // 三角関数でXとZの円周上座標を計算
-        float radian = angle * Mathf.Deg2Rad;
+        float radian = nextangle * Mathf.Deg2Rad;
         float x = centerPoint.position.x + Mathf.Cos(radian) * radius;
         float z = centerPoint.position.z + Mathf.Sin(radian) * radius;
-
         Vector3 targetPosition =
-            new Vector3(x, transform.position.y, z);
-        
+            new Vector3(x, rb.position.y, z);
 
+        ///NOTE:playerが移動に合わせて回転する。（自然な円移動に見せるため）
+        ///TODO:AIによって出された答え、中身の理解が必要。
         if (horizontal != 0)
         {
             Vector3 moveDirection =
@@ -54,8 +59,11 @@ public class testmove : MonoBehaviour
 
             moveDirection.y = 0f;
 
+
+
             if (moveDirection != Vector3.zero)
             {
+                //回転の軸を見る
                 Quaternion targetRotation =
                     Quaternion.LookRotation(moveDirection);
 
@@ -67,10 +75,36 @@ public class testmove : MonoBehaviour
                     );
 
                 rb.MoveRotation(nextRotation);
+
+                //Rayによる衝突判定
+                Vector3 rayposition = transform.position + moveDirection * rayOffset;
+
+                Ray ray = new Ray(rayposition, moveDirection);
+                //Rayの描画？
+                Debug.DrawRay(rayposition, moveDirection * rayDistance, Color.red);
+
+                //衝突時移動ストップ
+                RaycastHit hit;
+                if (Physics.Raycast(
+                      ray,
+                      out hit,
+                      rayDistance,
+                      Physics.DefaultRaycastLayers,
+                      QueryTriggerInteraction.Ignore))
+                {
+                 
+                    Debug.Log("何かに当たった" + gameObject.name);
+                }
+                else
+                {
+                    //衝突していない時のみ角度を更新する。
+                    angle = nextangle;
+                    rb.MovePosition(targetPosition);
+                }
             }
         }
-        rb.MovePosition(targetPosition);
+
+
 
     }
-
 }
