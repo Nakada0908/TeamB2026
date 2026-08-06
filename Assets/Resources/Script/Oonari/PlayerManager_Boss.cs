@@ -1,40 +1,52 @@
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-//Playerの移動
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-using System.Security.Cryptography;
-using UnityEditor.Build;
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//Playerスクリプト（移動、ジャンプ、当たり判定、回転）
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+///TODO:宿里プロが
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
-public class testmove : MonoBehaviour
+public class PlayerManager_Boss : MonoBehaviour
 {
-    public float radius = 5f;          // 半径
+    public float radius = 25f;          // 半径
     public float speed = 10f;          // 移動速度
     public float horizontal;　　　     // 入力元
     public Transform centerPoint;      // 回転の中心となるオブジェクト
-                                       
+    public Vector3 velocity;
+
     private float rotationSpeed = 360f; // 回転速度
     private float angle;              　// 角度
     private float rayDistance = 0.3f; 　// レイの長さ
-    private float rayOffset   = 0.5f;
+    private float rayOffset = 0.5f;
     private Rigidbody rb;             //Rigidbodyの呼び出し
 
+    
     private const float minGroundDotProduct = 0.7f;
     private float jumpHeight = 2f;
+    public  bool  onGround;
     private bool isJump;
-    private bool onGround;
     private AudioSource audioSource;  //未実装
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        velocity = rb.linearVelocity;
+        if (Input.GetButtonDown("Jump2"))
+        {
+            isJump = true;
+        }
+        
     }
     private void FixedUpdate()
     {
         //仮の変数の中に角度を更新していく
         float nextangle = angle;
-
         horizontal = Input.GetAxisRaw("Horizontal");
         //playerの移動
         if (horizontal > 0)
@@ -56,6 +68,20 @@ public class testmove : MonoBehaviour
         float z = centerPoint.position.z + Mathf.Sin(radian) * radius;
         Vector3 targetPosition =
             new Vector3(x, rb.position.y, z);
+
+        //入力、着地してるときのみ
+        if (isJump)
+        {
+            if (onGround)
+            {
+                Jump();
+            }
+            //ジャンプの実行有無に関わらず入力フラグをリセットする
+            isJump = false;
+        }
+
+        //次フレームの物理演算のために接地フラグをリセットする
+        onGround = false;
 
         ///NOTE:playerが移動に合わせて回転する。（自然な円移動に見せるため）
         ///TODO:AIによって出された答え、中身の理解が必要。
@@ -99,7 +125,7 @@ public class testmove : MonoBehaviour
                       Physics.DefaultRaycastLayers,
                       QueryTriggerInteraction.Ignore))
                 {
-                 
+
                     Debug.Log("何かに当たった" + gameObject.name);
                 }
                 else
@@ -113,5 +139,37 @@ public class testmove : MonoBehaviour
 
 
 
+    }
+    //ジャンプ実装
+    private void Jump()
+    {
+        rb.linearVelocity += Vector3.up * Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
+
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        EvaluateCollision(collision);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        EvaluateCollision(collision);
+    }
+
+    private void EvaluateCollision(Collision collision)
+    {
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            Vector3 normal = collision.GetContact(i).normal;
+
+            if (normal.y >= minGroundDotProduct)
+            {
+                onGround = true;
+            }
+        }
     }
 }

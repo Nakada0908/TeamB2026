@@ -276,7 +276,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CenterPoint: {fileID: 1332267067}
   target: {fileID: 224312910}
-  TestMove: {fileID: 224312911}
+  TestMove: {fileID: 0}
+  playermanager_boss: {fileID: 224312919}
 --- !u!1 &213714511
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +409,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6697247148964139945, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
   m_PrefabInstance: {fileID: 235379446}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &224312911
+--- !u!114 &224312919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -417,13 +418,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 224312909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b6423775adff440b72240c9dd5c5d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6435b498b68790e48a7e20938456213e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 25
   speed: 10
   horizontal: 0
   centerPoint: {fileID: 1332267067}
+  velocity: {x: 0, y: 0, z: 0}
+  onGround: 0
 --- !u!1001 &235379446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -764,7 +767,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9157125850852783736, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 224312911}
+      addedObject: {fileID: 224312919}
     - targetCorrespondingSourceObject: {fileID: 6463327504391184791, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1089416132}
@@ -1342,7 +1345,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648560275}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab83dee7884a98c49a405761698e5b3d, type: 3}
   m_Name: 
@@ -1765,7 +1768,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1089416133}
-  TestMove: {fileID: 224312911}
+  TestMove: {fileID: 0}
+  playermanager_boss: {fileID: 224312919}
 --- !u!95 &1089416133 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8552458215270520646, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
@@ -3366,7 +3370,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592301431}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab83dee7884a98c49a405761698e5b3d, type: 3}
   m_Name: 

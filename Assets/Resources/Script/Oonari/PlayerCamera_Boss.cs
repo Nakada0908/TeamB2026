@@ -6,6 +6,7 @@ public class PlayerCamera_Boss : MonoBehaviour
     public Transform CenterPoint;
     public Transform target;
     public testmove TestMove;
+    public PlayerManager_Boss playermanager_boss;
 
     Vector3 defalutCameraOffset;    //デフォルトカメラ位置
     Quaternion defalutCameraDir;    //デフォルトカメラ方向
@@ -26,13 +27,13 @@ public class PlayerCamera_Boss : MonoBehaviour
         transform.LookAt(Target);
 
 
-        if (TestMove.horizontal > 0)
+        if (playermanager_boss.horizontal > 0)
         {
-            transform.RotateAround(CenterPoint.position, Vector3.up, -TestMove.speed * Time.deltaTime);
+            transform.RotateAround(CenterPoint.position, Vector3.up, -playermanager_boss.speed * Time.deltaTime);
         }
-        else if (TestMove.horizontal < 0)
+        else if (playermanager_boss.horizontal < 0)
         {
-            transform.RotateAround(CenterPoint.position, Vector3.up, TestMove.speed * Time.deltaTime);
+            transform.RotateAround(CenterPoint.position, Vector3.up, playermanager_boss.speed * Time.deltaTime);
         }
 
     }
