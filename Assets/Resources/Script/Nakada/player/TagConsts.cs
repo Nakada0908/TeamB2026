@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class TagConsts
 {
     //判定

@@ -2,7 +2,6 @@
 //Playerの動き、回転
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerAnimation_Boss : MonoBehaviour
 {
