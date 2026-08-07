@@ -58,9 +58,6 @@ public class WallChange : MonoBehaviour
         // ‰ñ“]—Ê‚ð‰ÁŽZ
         totalRotation += delta;
 
-        // Debug—p
-        Debug.Log("‰ñ“]—Ê = " + totalRotation);
-
         // 1Žü‚µ‚½‚ç•Ç‚ðØ‚è‘Ö‚¦
         if (Mathf.Abs(totalRotation) >= 360f)
         {
