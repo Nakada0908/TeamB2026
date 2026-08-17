@@ -7,6 +7,9 @@ public class BossLookPlayer : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(playerTransform);
+        //Y軸のみを回転させる
+        Vector3 targetPosition = playerTransform.position;
+        targetPosition.y = transform.position.y;
+        transform.LookAt(targetPosition);
     }
 }
