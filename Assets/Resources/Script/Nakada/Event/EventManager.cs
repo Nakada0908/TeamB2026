@@ -12,6 +12,9 @@ public enum EEventType
     RightNui =101,
 
     Eye =110,
+
+    LeftMiniYagi=120,
+    RightMiniYagi=121,
 }
 
 //読み込み用のクラス
@@ -74,7 +77,7 @@ public class EventManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(TagConsts.Player))
         {
             EventPointData spawnPoint = eventPos.eventPoints[currentEventData.spawnPositionNum];
             StartCoroutine(StartEvent(currentEventData, spawnPoint));
@@ -157,6 +160,9 @@ public class EventManager : MonoBehaviour
         dropObjects[EEventType.RightNui] = Resources.Load<GameObject>(eventFoldar + "RightMoveNui");
 
         dropObjects[EEventType.Eye] = Resources.Load<GameObject>(eventFoldar + "Eye");
+
+        dropObjects[EEventType.LeftMiniYagi] = Resources.Load<GameObject>(eventFoldar + "LeftMiniYagi");
+        dropObjects[EEventType.RightMiniYagi] = Resources.Load<GameObject>(eventFoldar + "RightMiniYagi");
     }
     #endregion
 }

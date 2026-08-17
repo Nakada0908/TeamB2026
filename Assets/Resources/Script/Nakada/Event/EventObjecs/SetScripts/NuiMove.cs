@@ -10,8 +10,7 @@ public class NuiMove : MonoBehaviour
 
     private Animator walkAnime;
 
-    private void Start()
-    {
+    private void Start()    {
         rb = GetComponent<Rigidbody>();
         LR = isLeftRotation ? 1f : -1f;
         walkAnime = GetComponentInChildren<Animator>();
@@ -40,18 +39,23 @@ public class NuiMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag(TagConsts.Ground))
         {
             isOnGround = true;
             if(isLeftRotation)
             {
                 transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-                walkAnime.SetTrigger("walk");
-            }
+                if (walkAnime != null)
+                {
+                    walkAnime.SetTrigger("walk");
+                }            }
             else
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                walkAnime.SetTrigger("walk");
+                if (walkAnime != null)
+                {
+                    walkAnime.SetTrigger("walk");
+                }
             }
         }
     }
