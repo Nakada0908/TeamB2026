@@ -4,9 +4,9 @@ public class PlayerHit : MonoBehaviour
 {
     private bool hiding;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        if (collision.gameObject.CompareTag(TagConsts.Monster))
+        if (other.gameObject.CompareTag(TagConsts.Monster))
         {
             Death();
         }
@@ -17,13 +17,17 @@ public class PlayerHit : MonoBehaviour
         {
             hiding = true;
         }
-
         if (other.gameObject.CompareTag(TagConsts.LightHitBox))
         {
             if (!hiding)
             {
                 Death();
             }
+        }
+
+        if (other.gameObject.CompareTag(TagConsts.Monster))
+        {
+            Death();
         }
     }
 

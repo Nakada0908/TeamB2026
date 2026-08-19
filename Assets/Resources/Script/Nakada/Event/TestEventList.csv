@@ -1,0 +1,9 @@
+eventTypeStr,clockColliderPosition,clockSpawnPosition,dropDelayTime
+Fire,3,1,0
+Eye,4,5,0
+RightMiniYagi,5,4,0
+LeftMiniYagi,6,8,0
+RightNui,7,6,0
+LeftNui,8,9,0
+RightMiniYagi,9,7,0
+Gareki,10,11,0
