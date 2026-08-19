@@ -3,7 +3,7 @@ using UnityEngine;
 public class FireObject : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
-    [SerializeField] private float deleteTime = 15f;
+    [SerializeField] private float deleteTime = 10f;
 
     private bool isMoving = false;
 

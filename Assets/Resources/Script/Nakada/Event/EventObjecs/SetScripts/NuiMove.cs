@@ -10,7 +10,8 @@ public class NuiMove : MonoBehaviour
 
     private Animator walkAnime;
 
-    private void Start()    {
+    private void Start()    
+    {
         rb = GetComponent<Rigidbody>();
         LR = isLeftRotation ? 1f : -1f;
         walkAnime = GetComponentInChildren<Animator>();
@@ -48,7 +49,8 @@ public class NuiMove : MonoBehaviour
                 if (walkAnime != null)
                 {
                     walkAnime.SetTrigger("walk");
-                }            }
+                }            
+            }
             else
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f);
