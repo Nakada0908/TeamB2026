@@ -15,6 +15,9 @@ public class NuiMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         LR = isLeftRotation ? 1f : -1f;
         walkAnime = GetComponentInChildren<Animator>();
+
+        //生成時の向き(円の外向き)を90度ひねると進行方向になる
+        transform.rotation *= Quaternion.Euler(0f, 90f * LR, 0f);
     }
 
     private void FixedUpdate()
@@ -43,21 +46,9 @@ public class NuiMove : MonoBehaviour
         if (collision.gameObject.CompareTag(TagConsts.Ground))
         {
             isOnGround = true;
-            if(isLeftRotation)
+            if (walkAnime != null)
             {
-                transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-                if (walkAnime != null)
-                {
-                    walkAnime.SetTrigger("walk");
-                }            
-            }
-            else
-            {
-                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                if (walkAnime != null)
-                {
-                    walkAnime.SetTrigger("walk");
-                }
+                walkAnime.SetTrigger("walk");
             }
         }
     }
