@@ -129,31 +129,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 700635136086167280, guid: 63e93102fe1426a4daba6b6513ac65fd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.28788465
+      value: 0.2923357
       objectReference: {fileID: 0}
     - target: {fileID: 700635136086167280, guid: 63e93102fe1426a4daba6b6513ac65fd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.40774852
+      value: -0.45368728
       objectReference: {fileID: 0}
     - target: {fileID: 700635136086167280, guid: 63e93102fe1426a4daba6b6513ac65fd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.090211965
+      value: -0.074536055
       objectReference: {fileID: 0}
     - target: {fileID: 700635136086167280, guid: 63e93102fe1426a4daba6b6513ac65fd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.8618152
+      value: 0.8385417
       objectReference: {fileID: 0}
     - target: {fileID: 700635136086167280, guid: 63e93102fe1426a4daba6b6513ac65fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -4.547
+      value: -8.063
       objectReference: {fileID: 0}
     - target: {fileID: 700635136086167280, guid: 63e93102fe1426a4daba6b6513ac65fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -49.212
+      value: -54.339
       objectReference: {fileID: 0}
     - target: {fileID: 700635136086167280, guid: 63e93102fe1426a4daba6b6513ac65fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 145.14
+      value: 145.704
       objectReference: {fileID: 0}
     - target: {fileID: 1766004073222879075, guid: 63e93102fe1426a4daba6b6513ac65fd, type: 3}
       propertyPath: m_LocalScale.x
@@ -1631,7 +1631,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventPos: {fileID: 533737905}
   fireManager: {fileID: 1159156493}
-  eventList: []
   eventCsvFile: {fileID: 4900000, guid: b8ec54b3cc1695440a6ea9da674cc1e0, type: 3}
 --- !u!4 &1159156492
 Transform:
@@ -2241,7 +2240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1389075929
 Transform:
   m_ObjectHideFlags: 0
@@ -5809,7 +5808,7 @@ PrefabInstance:
       objectReference: {fileID: 1834840606}
     - target: {fileID: 2569599906003656729, guid: b99f81d30e48af345a60855a1fea48be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4803955471496203560, guid: b99f81d30e48af345a60855a1fea48be, type: 3}
       propertyPath: m_Name
