@@ -16,7 +16,7 @@ public class NuiMove : MonoBehaviour
         LR = isLeftRotation ? 1f : -1f;
         walkAnime = GetComponentInChildren<Animator>();
 
-        //生成時の向き(円の外向き)を90度ひねると進行方向になる
+        //生成時の向きをひねって進行方向とする（プレハブ作成時はZ軸が進行方向になるようにしておく）
         transform.rotation *= Quaternion.Euler(0f, 90f * LR, 0f);
     }
 

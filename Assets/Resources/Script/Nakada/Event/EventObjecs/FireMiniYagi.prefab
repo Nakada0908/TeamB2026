@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  deleteDistance: 50
+  deleteTime: 10
 --- !u!1001 &389281653268738962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 21cf8938fe71e7f40bd99dca74d3eeb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 21cf8938fe71e7f40bd99dca74d3eeb6, type: 3}
       propertyPath: m_LocalPosition.z
