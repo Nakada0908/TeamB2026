@@ -15,6 +15,7 @@ public enum EEventType
 
     LeftMiniYagi=120,
     RightMiniYagi=121,
+    Gareki=129,
 
     Fire =200,
 }
@@ -175,6 +176,7 @@ public class EventManager : MonoBehaviour
 
         dropObjects[EEventType.LeftMiniYagi] = Resources.Load<GameObject>(eventFoldar + "LeftMiniYagi");
         dropObjects[EEventType.RightMiniYagi] = Resources.Load<GameObject>(eventFoldar + "RightMiniYagi");
+        dropObjects[EEventType.Gareki] = Resources.Load<GameObject>(eventFoldar + "Gareki");
 
         //発射通知のスポーン
         dropObjects[EEventType.Fire] = Resources.Load<GameObject>(eventFoldar + "FireNotice");

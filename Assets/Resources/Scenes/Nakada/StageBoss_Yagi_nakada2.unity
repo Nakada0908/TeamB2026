@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventPos: {fileID: 533737905}
   fireManager: {fileID: 1159156493}
-  eventCsvFile: {fileID: 4900000, guid: b8ec54b3cc1695440a6ea9da674cc1e0, type: 3}
+  eventCsvFile: {fileID: 4900000, guid: 2b2f64a7d77d9ad49832590ffe41d700, type: 3}
 --- !u!4 &1159156492
 Transform:
   m_ObjectHideFlags: 0
