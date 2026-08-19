@@ -15,6 +15,8 @@ public enum EEventType
 
     LeftMiniYagi=120,
     RightMiniYagi=121,
+
+    Fire =200,
 }
 
 //読み込み用のクラス
@@ -35,10 +37,12 @@ public class EventManager : MonoBehaviour
 {
     //出現位置
     [SerializeField] private SetEventPos eventPos;
+    //FireNoticeに渡す
+    [SerializeField] private FireManager fireManager;
     //出現オブジェクトをTypeとオブジェクトをセットにして設定
     private Dictionary<EEventType, GameObject> dropObjects = new Dictionary<EEventType, GameObject>();
     //イベントのデータ
-    [SerializeField] private List<EventData> eventList = new List<EventData>();
+    private List<EventData> eventList = new List<EventData>();
     [SerializeField] private TextAsset eventCsvFile;
     private int currentEventIndex = 0;
 
@@ -100,7 +104,15 @@ public class EventManager : MonoBehaviour
         {
             Vector3 pos = targetPoint.position;
             pos.y += 10f;
-            Instantiate(prefab, pos, targetPoint.rotation);
+            GameObject spawnedObject = Instantiate(prefab, pos, targetPoint.rotation);
+
+            //発射通知オブジェクトだった場合は、発射先のマネージャを渡す
+            FireNotice notice = spawnedObject.GetComponent<FireNotice>();
+            if (notice != null)
+            {
+                notice.fireManager = fireManager;
+            }
+
             Debug.Log(currentEvent.eventType.ToString() + "がスポーンしたよ");
         }
         else
@@ -163,6 +175,9 @@ public class EventManager : MonoBehaviour
 
         dropObjects[EEventType.LeftMiniYagi] = Resources.Load<GameObject>(eventFoldar + "LeftMiniYagi");
         dropObjects[EEventType.RightMiniYagi] = Resources.Load<GameObject>(eventFoldar + "RightMiniYagi");
+
+        //発射通知のスポーン
+        dropObjects[EEventType.Fire] = Resources.Load<GameObject>(eventFoldar + "FireNotice");
     }
     #endregion
 }
