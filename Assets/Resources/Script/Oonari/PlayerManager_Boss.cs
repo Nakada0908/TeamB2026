@@ -6,31 +6,40 @@ using UnityEngine;
 
 public class PlayerManager_Boss : MonoBehaviour
 {
-    public float radius = 25f;          // 半径
-    public float speed = 10f;          // 移動速度
-    public float horizontal;　　　     // 入力元
-    public Transform centerPoint;      // 回転の中心となるオブジェクト
+    //　　-移動に使う変数-
+
+    public float speed = 10f;          // 円上を移動する速さ
+    public float horizontal;           // 入力値  
     public Vector3 velocity;
+    [SerializeField] private Transform centerPoint;  // 回転の中心となるオブジェクト
+    [SerializeField] private float radius = 25f;     // 半径
 
-    private float rotationSpeed = 360f; // 回転速度
+    //　　-回転の内部変数ー
+    
+    private float turnSpeed = 10f; // 回転速度
     private float angle;              　// 角度
+    
+    //    -障害物判定-
+    
     private float rayDistance = 0.3f; 　// レイの長さ
-    private float rayOffset = 0.5f;
-    private Rigidbody rb;             //Rigidbodyの呼び出し
+    private float rayOffset = 0.5f;     // レイをplayerの中心から前へずらす
+    private Rigidbody rb;             
 
-    
+    //    -ジャンプ・離地判定-
+
+    public bool  onGround;             // 地面に接してるか。
+    private bool isJump;　　　　　　　 // ジャンプ入力を受け取ったか。
     private const float minGroundDotProduct = 0.7f;
-    private float jumpHeight = 2f;
-    public  bool  onGround;
-    private bool isJump;
-    private AudioSource audioSource;  //未実装
-    
+    private float jumpHeight = 2f;　　 //ジャンプの高さ
+    private AudioSource audioSource;   //未実装
+
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+    
     }
 
     // Update is called once per frame
@@ -41,11 +50,11 @@ public class PlayerManager_Boss : MonoBehaviour
         {
             isJump = true;
         }
-        
+
     }
     private void FixedUpdate()
     {
-        //仮の変数の中に角度を更新していく
+        //　NOTE:壁に当たっていない場合のみ、円周上の位置を更新
         float nextangle = angle;
         horizontal = Input.GetAxisRaw("Horizontal");
         //playerの移動
@@ -61,8 +70,8 @@ public class PlayerManager_Boss : MonoBehaviour
 
         }
 
-        ///NOTE:playerが中央のオブジェクトの周りを周回する。
-        // 三角関数でXとZの円周上座標を計算
+        //　NOTE:playerが中央のオブジェクトの周りを周回する。
+        //三角関数でXとZの円周上座標を計算
         float radian = nextangle * Mathf.Deg2Rad;
         float x = centerPoint.position.x + Mathf.Cos(radian) * radius;
         float z = centerPoint.position.z + Mathf.Sin(radian) * radius;
@@ -81,18 +90,16 @@ public class PlayerManager_Boss : MonoBehaviour
         }
 
         //次フレームの物理演算のために接地フラグをリセットする
-        onGround = false;
-
-        ///NOTE:playerが移動に合わせて回転する。（自然な円移動に見せるため）
-        ///TODO:AIによって出された答え、中身の理解が必要。
+        onGround = false;   
+        //Player回転処理ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+        //NOTE:playerが移動に合わせて回転する。（自然な円移動に見せるため）
         if (horizontal != 0)
         {
+            //TODO:AIによって出された答え、中身の理解が必要。
             Vector3 moveDirection =
                 (targetPosition - rb.position).normalized;
 
             moveDirection.y = 0f;
-
-
 
             if (moveDirection != Vector3.zero)
             {
@@ -101,10 +108,10 @@ public class PlayerManager_Boss : MonoBehaviour
                     Quaternion.LookRotation(moveDirection);
 
                 Quaternion nextRotation =
-                    Quaternion.RotateTowards(
+                    Quaternion.Slerp(
                         rb.rotation,
                         targetRotation,
-                        rotationSpeed * Time.fixedDeltaTime
+                        turnSpeed * Time.fixedDeltaTime
                     );
 
                 rb.MoveRotation(nextRotation);
@@ -113,10 +120,9 @@ public class PlayerManager_Boss : MonoBehaviour
                 Vector3 rayposition = transform.position + moveDirection * rayOffset;
 
                 Ray ray = new Ray(rayposition, moveDirection);
-                //Rayの描画。作動してるかチェック
+                //Rayの描画。(確認用)
                 Debug.DrawRay(rayposition, moveDirection * rayDistance, Color.red);
 
-                //衝突時移動ストップ
                 RaycastHit hit;
                 if (Physics.Raycast(
                       ray,
@@ -140,11 +146,11 @@ public class PlayerManager_Boss : MonoBehaviour
 
 
     }
-    //ジャンプ実装
+    //ジャンプ実装ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     private void Jump()
     {
         rb.linearVelocity += Vector3.up * Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
-
+        ///TODO:ジャンプ音用の AudioSourceを設定する
         if (audioSource != null)
         {
             audioSource.Play();
