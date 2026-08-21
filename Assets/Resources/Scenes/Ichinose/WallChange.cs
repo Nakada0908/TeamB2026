@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WallChange : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class WallChange : MonoBehaviour
 
     private float totalRotation = 0f;
     private int index = 0;
+    private int lapCount = 0;
     public Transform player;
     public Transform boss;
 
@@ -61,10 +63,19 @@ public class WallChange : MonoBehaviour
         // 1ü‚µ‚½‚ç•Ç‚ğØ‚è‘Ö‚¦
         if (Mathf.Abs(totalRotation) >= 360f)
         {
+            lapCount++;
+            Debug.Log("Œ»İ" + lapCount + "ü");
             if (index < oldWall.Length)
             {
                 ChangeWall(index);
                 index++;
+            }
+            if(lapCount >= 5)
+            {
+                Debug.Log("5ü‰ñ‚µ‚Ü‚µ‚½!Ending‚Ö");
+
+                SceneManager.LoadScene("LookBack");
+                return;
             }
 
             // Ÿ‚Ì1ü‚ğ”‚¦‚é‚½‚ßƒŠƒZƒbƒg
