@@ -13,8 +13,9 @@ public class EndingDirector : MonoBehaviour
     public GameObject zoomOutCamera;
 
     [Header("少女の幻影")]
-    public GameObject girlShadow;       // 【新增】少女的影子模型
-    public Animator girlAnimator;       // 【新增】少女的动画控制器
+    public GameObject girlShadow;       
+    public Animator girlAnimator;       
+    public ParticleSystem appearanceParticle;
 
     [Header("演出パラメータ (時間設定)")]
     public float firstPauseTime = 1.0f;
@@ -22,8 +23,8 @@ public class EndingDirector : MonoBehaviour
     public float secondPauseTime = 1f;
     public float secondStareTime = 1.5f;
     public float leaveScreeenTime = 4.5f;
-    public float shadowAppearDelay = 2.0f; // 【新增】镜头拉远后，等几秒少女才出现
-    public float finalFadeDelay = 3.0f;    // 【新增】少女挥手后，等几秒再黑屏
+    public float shadowAppearDelay = 3.0f; 
+    public float finalFadeDelay = 3.0f;    
 
     [Header("感情パラメータ")]
     public float cutsceneTurnSpeed = 4f;  
@@ -57,27 +58,42 @@ public class EndingDirector : MonoBehaviour
         playerController.maxSpeed = cutsceneWalkSpeed;
 
         // 2.ポイント1へ移動
-        playerController.simulatedMoveInput = new Vector2(1f, 0f);
-        while (player.position.x < walkTarget1.position.x) yield return null;
+        //playerController.simulatedMoveInput = new Vector2(1f, 0f);
+        //while (player.position.x < walkTarget1.position.x) yield return null;
 
         // 3.立ち止まる
-        playerController.simulatedMoveInput = Vector2.zero;
-        yield return new WaitForSeconds(firstPauseTime);
+        //playerController.simulatedMoveInput = Vector2.zero;
+        //yield return new WaitForSeconds(firstPauseTime);
 
         // 4.振り返る
-        playerController.simulatedMoveInput = new Vector2(-1f, 0f);
-        yield return new WaitForSeconds(0.1f);
+        //playerController.simulatedMoveInput = new Vector2(-1f, 0f);
+        //yield return new WaitForSeconds(0.1f);
+        //playerController.simulatedMoveInput = Vector2.zero;
+
+        //yield return WaitForFacing(269f);
+        //yield return new WaitForSeconds(firstStareTime);
+
+        
+
+        // 8.カメラを置き去りにして立ち去る
+        if (cameraTarget != null)
+        {
+            Debug.Log("Camera change");
+            cameraTarget.SetParent(null);
+        }
+        //9.カメラ切り替え
+        if (zoomOutCamera != null) zoomOutCamera.SetActive(true);
+
+        
+
+
+        // 5.ポイント2へ移動
+        playerController.simulatedMoveInput = new Vector2(1f, 0f);
+        while (player.position.x < walkTarget2.position.x) yield return null;
+
+
+        // 6.立ち止まる
         playerController.simulatedMoveInput = Vector2.zero;
-
-        yield return WaitForFacing(269f);
-        yield return new WaitForSeconds(firstStareTime);
-
-        // 5.ポイント2へ移動
-        playerController.simulatedMoveInput = new Vector2(1f, 0f);
-        while (player.position.x < walkTarget2.position.x) yield return null;
-
-        // 6.立ち止まる
-        playerController.simulatedMoveInput = Vector2.zero;
         yield return new WaitForSeconds(secondPauseTime);
 
         // 7.振り返る
@@ -88,18 +104,17 @@ public class EndingDirector : MonoBehaviour
         yield return WaitForFacing(269f);
         yield return new WaitForSeconds(secondStareTime);
 
-        // 8.カメラを置き去りにして立ち去る
-        if (cameraTarget != null) cameraTarget.SetParent(null);
-
         playerController.simulatedMoveInput = new Vector2(1f, 0f);
         yield return new WaitForSeconds(leaveScreeenTime);
 
-        //9.カメラ切り替え
-        if (zoomOutCamera != null) zoomOutCamera.SetActive(true);
-
-        yield return new WaitForSeconds(shadowAppearDelay);
 
         //10. 少女の幻影が出現し、手を振る
+        yield return new WaitForSeconds(shadowAppearDelay);
+        if (appearanceParticle != null)
+        {
+            appearanceParticle.Play(); 
+        }
+        
         if (girlShadow != null && girlAnimator != null)
         {
             girlShadow.SetActive(true);
