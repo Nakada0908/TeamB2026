@@ -43,6 +43,7 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+*.slnx
 *.suo
 *.tmp
 *.user
@@ -116,8 +117,13 @@ InitTestScene*.unity*
 /[Aa]ssets/Romantic Piano Music Pack.meta
 /[Aa]ssets/Time Sound FX/
 /[Aa]ssets/Time Sound FX.meta
+/[Aa]ssets/Audio/
+/[Aa]ssets/Audio.meta
 #SkyBoxe系
 /[Aa]ssets/SkySeries Freebie/
 /[Aa]ssets/SkySeries Freebie.meta
 /[Aa]ssets/AAA Space & Nebula HDRI Pack – 11 Ultra HD 8K Skyboxes (EXR + JPG)/
 /[Aa]ssets/AAA Space & Nebula HDRI Pack – 11 Ultra HD 8K Skyboxes (EXR + JPG).meta
+#拡張系
+/[Aa]ssets/Plugins/
+/[Aa]ssets/Plugins.meta
