@@ -44192,7 +44192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492ba24b2c4624843ae0d1d78ad1fa76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: EndIngScene
+  sceneName: StageBoss
   targetTag: Player
   fadeImage: {fileID: 1157269792}
   fadeDuration: 1
