@@ -107,7 +107,7 @@ public class EventManager : MonoBehaviour
         if (dropObjects.TryGetValue(currentEvent.eventType, out GameObject prefab))
         {
             Vector3 pos = targetPoint.position;
-            pos.y += 10f;
+            //上から落とすために少し上にずらす            pos.y += 10f;
             GameObject spawnedObject = Instantiate(prefab, pos, targetPoint.rotation);
 
             //発射通知オブジェクトだった場合は、発射先のマネージャを渡す

@@ -7,6 +7,11 @@ public class FireObject : MonoBehaviour
 
     private bool isMoving = false;
 
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void StartMove()
     {
         isMoving = true;

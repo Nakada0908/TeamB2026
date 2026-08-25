@@ -1,4 +1,11 @@
 eventTypeStr,clockColliderPosition,clockSpawnPosition,dropDelayTime
+Fire,1,1,0,斜め左下から
+Fire,3,1,0,真上から
+Fire,6,1,0,中心から
+Fire,7,1,0,斜め右上から
+Fire,10,1,0,斜め右上
+Fire,12,1,0,斜め左上
+
 Fire,3,1,0
 Eye,4,5,0
 RightMiniYagi,5,4,0
