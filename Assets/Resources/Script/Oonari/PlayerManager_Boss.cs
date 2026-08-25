@@ -1,7 +1,7 @@
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 //Playerスクリプト（移動、ジャンプ、当たり判定、回転）
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-///TODO:宿里プロが
+
 using UnityEngine;
 
 public class PlayerManager_Boss : MonoBehaviour
@@ -16,7 +16,7 @@ public class PlayerManager_Boss : MonoBehaviour
 
     //　　-回転の内部変数ー
     
-    private float turnSpeed = 10f; // 回転速度
+    private float turnSpeed = 10f;      // 回転速度
     private float angle;              　// 角度
     
     //    -障害物判定-
@@ -27,7 +27,7 @@ public class PlayerManager_Boss : MonoBehaviour
 
     //    -ジャンプ・離地判定-
 
-    public bool  onGround;             // 地面に接してるか。
+    public  bool onGround;             // 地面に接してるか。
     private bool isJump;　　　　　　　 // ジャンプ入力を受け取ったか。
     private const float minGroundDotProduct = 0.7f;
     private float jumpHeight = 2f;　　 //ジャンプの高さ
@@ -45,38 +45,34 @@ public class PlayerManager_Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+    private void FixedUpdate()
+    {
         velocity = rb.linearVelocity;
         if (Input.GetButtonDown("Jump2"))
         {
             isJump = true;
         }
 
-    }
-    private void FixedUpdate()
-    {
         //　NOTE:壁に当たっていない場合のみ、円周上の位置を更新
         float nextangle = angle;
         horizontal = Input.GetAxisRaw("Horizontal");
         //playerの移動
         if (horizontal > 0)
         {
-            //右
             nextangle += speed * Time.fixedDeltaTime;
         }
         else if (horizontal < 0)
         {
-            //左
             nextangle -= speed * Time.fixedDeltaTime;
-
         }
 
-        //　NOTE:playerが中央のオブジェクトの周りを周回する。
-        //三角関数でXとZの円周上座標を計算
+        //NOTE:playerが中央のオブジェクトの周りを周回する。
         float radian = nextangle * Mathf.Deg2Rad;
         float x = centerPoint.position.x + Mathf.Cos(radian) * radius;
         float z = centerPoint.position.z + Mathf.Sin(radian) * radius;
-        Vector3 targetPosition =
-            new Vector3(x, rb.position.y, z);
+        Vector3 targetPosition = new Vector3(x, rb.position.y, z);
 
         //入力、着地してるときのみ
         if (isJump)
@@ -88,14 +84,14 @@ public class PlayerManager_Boss : MonoBehaviour
             //ジャンプの実行有無に関わらず入力フラグをリセットする
             isJump = false;
         }
-
         //次フレームの物理演算のために接地フラグをリセットする
         onGround = false;   
+
         //Player回転処理ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
         //NOTE:playerが移動に合わせて回転する。（自然な円移動に見せるため）
         if (horizontal != 0)
         {
-            //TODO:AIによって出された答え、中身の理解が必要。
+    
             Vector3 moveDirection =
                 (targetPosition - rb.position).normalized;
 
@@ -118,23 +114,18 @@ public class PlayerManager_Boss : MonoBehaviour
 
                 //Rayによる衝突判定
                 Vector3 rayposition = transform.position + moveDirection * rayOffset;
-
                 Ray ray = new Ray(rayposition, moveDirection);
+                
                 //Rayの描画。(確認用)
                 Debug.DrawRay(rayposition, moveDirection * rayDistance, Color.red);
 
                 RaycastHit hit;
-                if (Physics.Raycast(
+                if (!Physics.Raycast(
                       ray,
                       out hit,
                       rayDistance,
                       Physics.DefaultRaycastLayers,
                       QueryTriggerInteraction.Ignore))
-                {
-
-                    Debug.Log("何かに当たった" + gameObject.name);
-                }
-                else
                 {
                     //衝突していない時のみ角度を更新する。
                     angle = nextangle;
@@ -165,7 +156,7 @@ public class PlayerManager_Boss : MonoBehaviour
     {
         EvaluateCollision(collision);
     }
-
+    //地面接触判定
     private void EvaluateCollision(Collision collision)
     {
         for (int i = 0; i < collision.contactCount; i++)

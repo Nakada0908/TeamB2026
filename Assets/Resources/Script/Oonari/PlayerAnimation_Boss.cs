@@ -1,8 +1,7 @@
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-//Playerの動き、回転
+//Playerのアニメーション設定、回転
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerAnimation_Boss : MonoBehaviour
 {
@@ -26,19 +25,17 @@ public class PlayerAnimation_Boss : MonoBehaviour
         animator.SetBool("onGround", playermanager_boss.onGround);
         playermanager_boss.horizontal = Input.GetAxisRaw("Horizontal");
         //進行方向に合わせて回転する。
-        /// HACK:Playerごと回転してしまう、Playerの方向を常に右に
         if (playermanager_boss.horizontal > 0)
         {
-            //右
             gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
-
+            //targetRotation = Quaternion.Euler(0, 0, 0)
         }
         else if (playermanager_boss.horizontal < 0)
         {
-            //左
-
             gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+            //targetRotation = Quaternion.Euler(0, 170, 0);
         }
+     
     }
 }
 
