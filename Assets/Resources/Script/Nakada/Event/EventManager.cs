@@ -45,7 +45,7 @@ public class EventManager : MonoBehaviour
     //イベントのデータ
     private List<EventData> eventList = new List<EventData>();
     [SerializeField] private TextAsset eventCsvFile;
-    private int currentEventIndex = 0;
+    public int currentEventIndex = 0;
 
     private EventData currentEventData;
     private EventPointData currentTargetPoint;
@@ -62,7 +62,7 @@ public class EventManager : MonoBehaviour
     }
 
     //次のイベント地点へ移動させる
-    private void SetNextEventCollider()
+    public void SetNextEventCollider()
     {
         if (currentEventIndex >= eventList.Count)
         {
@@ -70,6 +70,9 @@ public class EventManager : MonoBehaviour
             GetComponent<Collider>().enabled = false;
             return;
         }
+
+        //セーブで復活したとき、無効化されたままにならないように戻す
+        GetComponent<Collider>().enabled = true;
 
         currentEventData = eventList[currentEventIndex];
         currentTargetPoint = eventPos.eventPoints[currentEventData.colliderPositionNum];
