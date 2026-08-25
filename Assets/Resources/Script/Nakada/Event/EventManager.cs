@@ -45,7 +45,7 @@ public class EventManager : MonoBehaviour
     //イベントのデータ
     private List<EventData> eventList = new List<EventData>();
     [SerializeField] private TextAsset eventCsvFile;
-    public int currentEventIndex = 0;
+    [HideInInspector] public int currentEventIndex = 0;
 
     private EventData currentEventData;
     private EventPointData currentTargetPoint;
@@ -107,7 +107,8 @@ public class EventManager : MonoBehaviour
         if (dropObjects.TryGetValue(currentEvent.eventType, out GameObject prefab))
         {
             Vector3 pos = targetPoint.position;
-            //上から落とすために少し上にずらす            pos.y += 10f;
+            //上から落とすために少し上にずらす
+            pos.y += 10f;
             GameObject spawnedObject = Instantiate(prefab, pos, targetPoint.rotation);
 
             //発射通知オブジェクトだった場合は、発射先のマネージャを渡す

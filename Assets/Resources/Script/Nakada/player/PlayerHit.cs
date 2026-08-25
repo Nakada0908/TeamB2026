@@ -53,7 +53,7 @@ public class PlayerHit : MonoBehaviour
     private void Death()
     {
         //死んだときの処理を書く
-        BossSaveManager.instance.ResetToSavePlayer();
+        //BossSaveManager.instance.ResetToSavePlayer();
         Debug.Log("死亡～");
     }
 }

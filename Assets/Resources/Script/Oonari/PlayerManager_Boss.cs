@@ -169,4 +169,10 @@ public class PlayerManager_Boss : MonoBehaviour
             }
         }
     }
+
+    //セーブによるリセットーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    public void ResetAngle()
+    {
+        angle = 0f;
+    }
 }
