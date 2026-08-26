@@ -1770,7 +1770,6 @@ MonoBehaviour:
   animator: {fileID: 1089416133}
   TestMove: {fileID: 0}
   playermanager_boss: {fileID: 224312919}
-  turnSpeed: 10
 --- !u!95 &1089416133 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8552458215270520646, guid: b6f6dc4afe5e4a8438d9a6f3155fa4a2, type: 3}
