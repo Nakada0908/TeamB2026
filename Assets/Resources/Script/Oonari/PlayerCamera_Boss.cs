@@ -1,30 +1,37 @@
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//Playerを追従するカメラ
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 using UnityEngine;
 
 public class PlayerCamera_Boss : MonoBehaviour
 {
 
-    public Transform CenterPoint;
-    public Transform target;
+    [SerializeField] private Transform CenterPoint;
+    [SerializeField] private Transform target;
     public testmove TestMove;
     public PlayerManager_Boss playermanager_boss;
-
-    Vector3 defalutCameraOffset;    //デフォルトカメラ位置
-    Quaternion defalutCameraDir;    //デフォルトカメラ方向
-    
    
     // Update is called once per frame
     void FixedUpdate()
     {
+
         //敵とプレイヤーのベクトルを調べる
         Vector3 enemyOffset = target.position - CenterPoint.position;
+
         //正規化する。距離を取りやすいように
         enemyOffset.Normalize();
+
         //プレイヤーとカメラの距離の位置
-        transform.position = target.position + (enemyOffset * 5f);
+        Vector3 cameraPosition = target.position + (enemyOffset * 5f);
+
+        // Y軸はカメラの現在位置のまま固定
+        // NOTE:ジャンプ時一緒にy軸が動かないように固定している。
+        cameraPosition.y = transform.position.y;
+        transform.position = cameraPosition;
+
         //カメラが見つめる位置
-        Vector3 Target = target.position + new Vector3(0, 1.5f, 0);
-        //lookatでプレイヤー座標を見る
-        transform.LookAt(Target);
+        Vector3 lookTarget = target.position + new Vector3(0, 2.5f, 0);
+        
 
 
         if (playermanager_boss.horizontal > 0)

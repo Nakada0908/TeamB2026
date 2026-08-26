@@ -3,7 +3,12 @@ guid: a9b5094c63dc6e04a9ec433267b73254
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nuigurumi_mat
+    second: {fileID: 2100000, guid: 0bf245a31cb71df40a5763eefdd372e9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
