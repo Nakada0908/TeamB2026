@@ -1,7 +1,7 @@
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 //Playerスクリプト（移動、ジャンプ、当たり判定、回転）
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
+//TODO:停止中にonGroundがtrueにならない。そこを修正 8/26
 using UnityEngine;
 
 public class PlayerManager_Boss : MonoBehaviour
@@ -23,11 +23,11 @@ public class PlayerManager_Boss : MonoBehaviour
     
     private float rayDistance = 0.3f; 　// レイの長さ
     private float rayOffset = 0.5f;     // レイをplayerの中心から前へずらす
-    private Rigidbody rb;             
+    private Rigidbody rb;
 
     //    -ジャンプ・離地判定-
 
-    public  bool onGround;             // 地面に接してるか。
+    public bool onGround;             // 地面に接してるか。
     private bool isJump;　　　　　　　 // ジャンプ入力を受け取ったか。
     private const float minGroundDotProduct = 0.7f;
     private float jumpHeight = 2f;　　 //ジャンプの高さ
@@ -45,19 +45,19 @@ public class PlayerManager_Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        velocity = rb.linearVelocity;
     }
     private void FixedUpdate()
     {
-        velocity = rb.linearVelocity;
+        
         if (Input.GetButtonDown("Jump2"))
         {
             isJump = true;
         }
 
         //　NOTE:壁に当たっていない場合のみ、円周上の位置を更新
+        rb.linearVelocity = velocity;
         float nextangle = angle;
-        horizontal = Input.GetAxisRaw("Horizontal");
         //playerの移動
         if (horizontal > 0)
         {
@@ -138,7 +138,7 @@ public class PlayerManager_Boss : MonoBehaviour
 
     }
     //ジャンプ実装ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    private void Jump()
+private void Jump()
     {
         rb.linearVelocity += Vector3.up * Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
         ///TODO:ジャンプ音用の AudioSourceを設定する
