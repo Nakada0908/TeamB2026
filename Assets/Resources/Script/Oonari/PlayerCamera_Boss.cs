@@ -30,7 +30,7 @@ public class PlayerCamera_Boss : MonoBehaviour
         transform.position = cameraPosition;
 
         //ƒJƒƒ‰‚ªŒ©‚Â‚ß‚éˆÊ’u
-        Vector3 lookTarget = target.position + new Vector3(0, 2.5f, 0);
+        Vector3 lookTarget = target.position + new Vector3(1.5f, 1.5f, 0);
         
 
 
