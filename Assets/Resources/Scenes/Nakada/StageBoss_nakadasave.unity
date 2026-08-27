@@ -5778,7 +5778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventPos: {fileID: 533737905}
   fireManager: {fileID: 1883090867}
-  eventCsvFile: {fileID: 4900000, guid: 2b2f64a7d77d9ad49832590ffe41d700, type: 3}
+  eventCsvFile: {fileID: 4900000, guid: b8ec54b3cc1695440a6ea9da674cc1e0, type: 3}
   currentEventIndex: 0
 --- !u!65 &1883090869
 BoxCollider:
