@@ -9,7 +9,7 @@ public class WallChange : MonoBehaviour
 
     private float totalRotation = 0f;
     private int index = 0;
-    private int lapCount = 0;
+    [HideInInspector] public int lapCount = 0;
     public Transform player;
     public Transform boss;
 
@@ -70,9 +70,9 @@ public class WallChange : MonoBehaviour
                 ChangeWall(index);
                 index++;
             }
-            if(lapCount >= 5)
+            if(lapCount >= 3)
             {
-                Debug.Log("5周回しました!Endingへ");
+                Debug.Log("3周回しました!Endingへ");
 
                 SceneManager.LoadScene("LookBack");
                 return;
@@ -83,5 +83,18 @@ public class WallChange : MonoBehaviour
         }
 
         previousAngle = angle;
+    }
+
+    //セーブ時のリセット用
+    public void ResetRotation()
+    {
+        totalRotation = 0f;
+
+        Vector3 dir = player.position - boss.position;
+
+        previousAngle = Mathf.Atan2(dir.z, dir.x) * Mathf.Rad2Deg;
+
+        if (previousAngle < 0)
+            previousAngle += 360f;
     }
 }

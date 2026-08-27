@@ -1,6 +1,11 @@
 eventTypeStr,clockColliderPosition,clockSpawnPosition,dropDelayTime
+Fire,1,1,0,斜め左下から、二週目
+RightMiniYagi,3,3,0
+LeftMiniYagi,4,5,0
+Fire,6,1,0,中心からの脅かし用
+LeftMiniYagi,8,9,1
+Fire,10,1,0,斜め右上
 Fire,12,1,0,斜め左上
-Eye,1,2,0,三週目
 
 Fire,1,1,0,発射リスト、斜め左下から
 Fire,3,1,0,真上から

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public enum EEventType
@@ -98,6 +99,12 @@ public class EventManager : MonoBehaviour
         //イベントの発生を遅延させる
         yield return new WaitForSeconds(eventData.dropDelayTime);
         ActivateEvent(eventData, spawnPoint);
+    }
+
+    //イベントの発生を止める
+    public void StopEvents()
+    {
+        StopAllCoroutines();
     }
 
     //共通のイベント発生処理
