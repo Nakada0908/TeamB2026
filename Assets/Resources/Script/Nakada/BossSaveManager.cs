@@ -10,6 +10,7 @@ public class BossSaveManager : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private EventManager eventManager;
     [SerializeField] private WallChange wallChange;
+    [SerializeField] private FireManager fireManager;
 
     //保持するもの
     private Vector3 savePlayerPos;
@@ -55,6 +56,9 @@ public class BossSaveManager : MonoBehaviour
         {
             saveEventId = 0;
         }
+
+        //発射物が次に何番目か覚えておく
+        fireManager.SaveIndex();
     }
 
     public void ResetToSavePlayer()
@@ -64,6 +68,9 @@ public class BossSaveManager : MonoBehaviour
         {
             Destroy(o.gameObject);
         }
+
+        //ディレイ中のイベントを止める
+        eventManager.StopEvents();
 
         //プレイヤーの位置と回転をリセット
         playerObject.transform.position = savePlayerPos;
@@ -86,5 +93,8 @@ public class BossSaveManager : MonoBehaviour
         //イベントIDを渡してコライダーの位置リセット
         eventManager.currentEventIndex = saveEventId;
         eventManager.SetNextEventCollider();
+
+        //発射物を元の位置に戻す
+        fireManager.ResetFire();
     }
 }

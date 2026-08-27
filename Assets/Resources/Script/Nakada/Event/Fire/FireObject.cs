@@ -6,6 +6,17 @@ public class FireObject : MonoBehaviour
     [SerializeField] private float deleteTime = 10f;
 
     private bool isMoving = false;
+    private float moveTimer = 0f;
+
+    //最初に置かれていた場所へ戻す
+    private Vector3 homePosition;
+    private Quaternion homeRotation;
+
+    private void Awake()
+    {
+        homePosition = transform.position;
+        homeRotation = transform.rotation;
+    }
 
     private void Start()
     {
@@ -15,7 +26,7 @@ public class FireObject : MonoBehaviour
     public void StartMove()
     {
         isMoving = true;
-        Destroy(gameObject, deleteTime);
+        moveTimer = 0f;
     }
 
     private void Update()
@@ -27,6 +38,25 @@ public class FireObject : MonoBehaviour
 
         //直進
         transform.position += transform.forward * speed * Time.deltaTime;
+
+        //時間が来たら、消さずに元の位置に戻す
+        moveTimer += Time.deltaTime;
+        if (moveTimer >= deleteTime)
+        {
+            ResetToHome();
+        }
+    }
+
+    //元の位置に戻して非表示にする
+    public void ResetToHome()
+    {
+        isMoving = false;
+        moveTimer = 0f;
+
+        transform.position = homePosition;
+        transform.rotation = homeRotation;
+
+        gameObject.SetActive(false);
     }
 
     //Sceneビューに発射方向の矢印を出す
