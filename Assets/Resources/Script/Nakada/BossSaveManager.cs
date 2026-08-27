@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.LightTransport;
 
 public class BossSaveManager : MonoBehaviour
 {
@@ -6,16 +7,17 @@ public class BossSaveManager : MonoBehaviour
 
     //参照
     [SerializeField] private GameObject playerObject;
+    [SerializeField] private Transform cameraTransform;
     [SerializeField] private EventManager eventManager;
     [SerializeField] private WallChange wallChange;
 
     //保持するもの
-    private Vector3 playerPos;
-    private Quaternion playerRotate;
-    private int eventId;
-
-    //周回が増えたかを見張るため、前に見た値を覚えておく
-    private int lastLapCount;
+    private Vector3 savePlayerPos;
+    private Quaternion savePlayerRotate;
+    private Vector3 saveCameraPos;
+    private Quaternion saveCameraRotate;
+    private int saveEventId;
+    private int saveLapCount;
 
     private void Awake()
     {
@@ -24,31 +26,35 @@ public class BossSaveManager : MonoBehaviour
 
     private void Start()
     {
-        //lastLapCount = wallChange.lapCount;
+        //saveLapCount = wallChange.lapCount;
 
-        //スタート地点を0周目のセーブポイントにする
         SavePlayer();
     }
 
     private void Update()
     {
         //周回数が増えたタイミングでセーブする
-        //if (wallChange.lapCount != lastLapCount)
+        //if (wallChange.lapCount != saveLapCount)
         //{
-        //    lastLapCount = wallChange.lapCount;
+        //    saveLapCount = wallChange.lapCount;
         //    SavePlayer();
         //}
     }
 
     public void SavePlayer()
     {
-        //周回の切れ目はスタートと同じ場所。高さが変わっても合うように毎回控える
-        playerPos = playerObject.transform.position;
-        playerRotate = playerObject.transform.rotation;
+        savePlayerPos = playerObject.transform.position;
+        savePlayerRotate = playerObject.transform.rotation;
+
+        saveCameraPos = cameraTransform.position;
+        saveCameraRotate = cameraTransform.rotation;
 
         //イベントのID保存
-        //currentEventIndexは「次に構える番号」なので、今構えてる番号は1つ前
-        eventId = Mathf.Max(0, eventManager.currentEventIndex - 1);
+        saveEventId = eventManager.currentEventIndex - 1;
+        if (saveEventId < 0)
+        {
+            saveEventId = 0;
+        }
     }
 
     public void ResetToSavePlayer()
@@ -60,18 +66,25 @@ public class BossSaveManager : MonoBehaviour
         }
 
         //プレイヤーの位置と回転をリセット
-        playerObject.transform.position = playerPos;
-        playerObject.transform.rotation = playerRotate;
+        playerObject.transform.position = savePlayerPos;
+        playerObject.transform.rotation = savePlayerRotate;
         //内部で持ってる角度も戻す。これが無いと動いた瞬間に死んだ場所へ戻される
-        //playerObject.GetComponent<PlayerManager_Boss>().ResetAngle();
-        //落ちてた勢いを消す
-        playerObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        playerObject.GetComponent<PlayerManager_Boss>().ResetAngle();
+        //カメラの位置と回転をリセット
+        cameraTransform.position = saveCameraPos;
+        cameraTransform.rotation = saveCameraRotate;
+
+        //ジャンプや衝突で残ってた勢いを消す
+        Rigidbody playerRigidbody = playerObject.GetComponent<Rigidbody>();
+        playerRigidbody.linearVelocity = Vector3.zero;
+        playerRigidbody.angularVelocity = Vector3.zero;
 
         //プレイヤーを動かしてから、周回の計測をやり直す
+        //これもないと周回度数が増えたままになってしまう
         //wallChange.ResetRotation();
 
         //イベントIDを渡してコライダーの位置リセット
-        eventManager.currentEventIndex = eventId;
+        eventManager.currentEventIndex = saveEventId;
         eventManager.SetNextEventCollider();
     }
 }
