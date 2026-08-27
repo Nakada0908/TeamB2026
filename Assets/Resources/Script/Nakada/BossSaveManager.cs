@@ -27,7 +27,7 @@ public class BossSaveManager : MonoBehaviour
 
     private void Start()
     {
-        //saveLapCount = wallChange.lapCount;
+        saveLapCount = wallChange.lapCount;
 
         SavePlayer();
     }
@@ -35,11 +35,11 @@ public class BossSaveManager : MonoBehaviour
     private void Update()
     {
         //周回数が増えたタイミングでセーブする
-        //if (wallChange.lapCount != saveLapCount)
-        //{
-        //    saveLapCount = wallChange.lapCount;
-        //    SavePlayer();
-        //}
+        if (wallChange.lapCount != saveLapCount)
+        {
+            saveLapCount = wallChange.lapCount;
+            SavePlayer();
+        }
     }
 
     public void SavePlayer()
@@ -88,7 +88,7 @@ public class BossSaveManager : MonoBehaviour
 
         //プレイヤーを動かしてから、周回の計測をやり直す
         //これもないと周回度数が増えたままになってしまう
-        //wallChange.ResetRotation();
+        wallChange.ResetRotation();
 
         //イベントIDを渡してコライダーの位置リセット
         eventManager.currentEventIndex = saveEventId;
