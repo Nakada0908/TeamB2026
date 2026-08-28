@@ -8,7 +8,6 @@ public struct EventPointData
 
 public class SetEventPos : MonoBehaviour
 {
-    [SerializeField] private Transform centerTransform;
     [SerializeField] private float radius = 5f;
 
     public EventPointData[] eventPoints;
