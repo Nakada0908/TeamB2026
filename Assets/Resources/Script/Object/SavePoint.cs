@@ -18,7 +18,9 @@ public class SavePoint : MonoBehaviour
     [Header("光加減の調整")]
     [SerializeField] private float emissionPower = 2f;
     [SerializeField] private float emissionFadeTime = 1f;
+    
     private Material hanaMaterial;
+    private Animator hanaAnimator;
 
     private void Awake()
     {
@@ -36,6 +38,8 @@ public class SavePoint : MonoBehaviour
 
         //デフォでエミッションつけてるから消しておく
         hanaMaterial.SetColor("_EmissionColor", Color.black);
+
+        hanaAnimator = GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +49,7 @@ public class SavePoint : MonoBehaviour
             PlayerSaveManager.instance.SavePlayerPosition(newPos, savePointType);
             Debug.Log("New SavePoint: " + newPos);
             GetComponent<Collider>().enabled = false;
+            hanaAnimator.SetTrigger("Bloom");
             StartCoroutine(FadeInEmission());
         }
     }
