@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLeftRotation: 1
-  rotationSpeed: 13
+  rotationSpeed: 12.5
 --- !u!1001 &6552273339824039724
 PrefabInstance:
   m_ObjectHideFlags: 0
