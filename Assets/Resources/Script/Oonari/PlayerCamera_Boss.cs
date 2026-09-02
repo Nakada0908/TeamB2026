@@ -21,8 +21,8 @@ public class PlayerCamera_Boss : MonoBehaviour
         //正規化する。距離を取りやすいように
         enemyOffset.Normalize();
 
-        //プレイヤーとカメラの距離の位置
-        Vector3 cameraPosition = target.position + (enemyOffset * 5f);
+        //プレイヤーとカメラの距離
+        Vector3 cameraPosition = target.position + (enemyOffset * 7f);
 
         // Y軸はカメラの現在位置のまま固定
         // NOTE:ジャンプ時一緒にy軸が動かないように固定している。
