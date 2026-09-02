@@ -45,16 +45,14 @@ public class PlayerManager_Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        velocity = rb.linearVelocity;
-    }
-    private void FixedUpdate()
-    {
-        
         if (Input.GetButtonDown("Jump2"))
         {
             isJump = true;
         }
-
+        velocity = rb.linearVelocity;
+    }
+    private void FixedUpdate()
+    {
         //　NOTE:壁に当たっていない場合のみ、円周上の位置を更新
         rb.linearVelocity = velocity;
         float nextangle = angle;
