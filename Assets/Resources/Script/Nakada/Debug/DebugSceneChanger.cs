@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class DebugSceneChanger : MonoBehaviour
 {
-    public static DebugSceneChanger instance;
-
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void AutoInitialize()
     {
@@ -12,25 +10,12 @@ public class DebugSceneChanger : MonoBehaviour
         managerObj.AddComponent<DebugSceneChanger>();
     }
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void Update()
     {
         //ゲーム本編
         if(Input.GetKeyDown (KeyCode.F1))
         {
-            SceneManager.LoadScene("Stage1color");
+            SceneManager.LoadScene("Stage1Color");
         }
         if(Input.GetKeyDown (KeyCode.F2))
         {
