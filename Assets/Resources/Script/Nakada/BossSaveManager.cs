@@ -8,7 +8,7 @@ public class BossSaveManager : MonoBehaviour
     [SerializeField] private GameObject playerObject;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private EventManager eventManager;
-    [SerializeField] private WallChange wallChange;
+    [SerializeField] private BossLapCount bossLapCount;
     [SerializeField] private FireManager fireManager;
 
     //保持するもの
@@ -26,7 +26,7 @@ public class BossSaveManager : MonoBehaviour
 
     private void Start()
     {
-        saveLapCount = wallChange.lapCount;
+        saveLapCount = bossLapCount.lapCount;
 
         SavePlayer();
     }
@@ -34,9 +34,9 @@ public class BossSaveManager : MonoBehaviour
     private void Update()
     {
         //周回数が増えたタイミングでセーブする
-        if (wallChange.lapCount != saveLapCount)
+        if (bossLapCount.lapCount != saveLapCount)
         {
-            saveLapCount = wallChange.lapCount;
+            saveLapCount = bossLapCount.lapCount;
             SavePlayer();
         }
     }
@@ -87,7 +87,7 @@ public class BossSaveManager : MonoBehaviour
 
         //プレイヤーを動かしてから、周回の計測をやり直す
         //これもないと周回度数が増えたままになってしまう
-        wallChange.ResetRotation();
+        bossLapCount.ResetRotation();
 
         //イベントIDを渡してコライダーの位置リセット
         eventManager.currentEventIndex = saveEventId;

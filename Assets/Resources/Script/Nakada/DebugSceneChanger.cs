@@ -25,7 +25,6 @@ public class DebugSceneChanger : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         //ゲーム本編
