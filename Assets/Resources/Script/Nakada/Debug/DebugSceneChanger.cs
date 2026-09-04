@@ -10,6 +10,11 @@ public class DebugSceneChanger : MonoBehaviour
         managerObj.AddComponent<DebugSceneChanger>();
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     void Update()
     {
         //ゲーム本編

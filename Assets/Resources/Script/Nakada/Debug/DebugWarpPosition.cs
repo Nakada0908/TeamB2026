@@ -4,7 +4,7 @@ public class DebugWarpPosition : MonoBehaviour
 {
     [SerializeField] Transform player;
 
-    [SerializeField] Vector3[] WarpPositions;
+    [SerializeField] Transform[] WarpPositions;
 
     void Update()
     {
@@ -13,7 +13,7 @@ public class DebugWarpPosition : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Keypad0 + i))
             {
-                player.position = WarpPositions[i];
+                player.position = WarpPositions[i].position;
             }
         }
     }
