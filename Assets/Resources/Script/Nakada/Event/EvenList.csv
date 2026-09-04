@@ -1,7 +1,7 @@
 eventTypeStr,clockColliderPosition,clockSpawnPosition,dropDelayTime,メモ
 RightNui,3,3,0,少し歩かせてから一週目のイベント開始
 LeftNui,5,6,0
-RightNui,7,6,0
+RightNui,7,7,0
 LeftNui,8,9,0
 LeftNui,10,11,0
 RightNui,11,11,0
@@ -19,9 +19,9 @@ Eye,1,2,0,三週目
 Eye,2,4,0
 LeftNui,3,5,1
 RightNui,5,5,0
-RightMiniYagi,6,6,15,ラスト襲われつつステルスできるように準備
+RightMiniYagi,6,6,18,ラスト襲われつつステルスできるように準備
 RightNui,7,7,8
-RightNui,8,8,4
+RightNui,8,8,6
 Eye,9,10,0
 Eye,10,11,0
 Eye,11,12,0
