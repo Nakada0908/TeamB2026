@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1178129956}
-  fadeOutSpeed: 10
-  fadeInSpeed: 2
+  fadeOutSpeed: 5
+  fadeInSpeed: 1
 --- !u!4 &120307040
 Transform:
   m_ObjectHideFlags: 0
@@ -5678,6 +5678,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 927986524}
   - {fileID: 1516751516}
   - {fileID: 2488051908360412427}
   - {fileID: 266223083}
@@ -5690,5 +5691,4 @@ SceneRoots:
   - {fileID: 1363275078}
   - {fileID: 2116513904}
   - {fileID: 1631462681}
-  - {fileID: 927986524}
   - {fileID: 120307040}
