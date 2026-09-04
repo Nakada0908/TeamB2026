@@ -50,7 +50,6 @@ public class BossLapCount : MonoBehaviour
             lapCount++;
             Debug.Log("現在" + lapCount + "周");
 
-            //花を開いた状態にする
             flowerAnime.SetBool("isBloom", true);
 
             if (lapCount >= maxLap)
@@ -66,8 +65,6 @@ public class BossLapCount : MonoBehaviour
         }
         else if(Mathf.Abs(totalRotation) >= 180f)
         {
-            //花を閉じた状態に戻す
-            //同じ値を入れ直すだけなので、毎フレーム呼んでも問題ない
             flowerAnime.SetBool("isBloom", false);
         }
 
@@ -88,7 +85,6 @@ public class BossLapCount : MonoBehaviour
             previousAngle += 360f;
         }
 
-        //セーブ地点は1周した直後なので、花は開いた状態に戻す
-        flowerAnime.SetBool("isBloom", true);
+        flowerAnime.SetBool("isBloom", false);
     }
 }

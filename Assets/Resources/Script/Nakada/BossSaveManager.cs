@@ -4,6 +4,8 @@ public class BossSaveManager : MonoBehaviour
 {
     public static BossSaveManager instance;
 
+    [SerializeField] private DeadFadeInOut fade;
+
     //参照
     [SerializeField] private GameObject playerObject;
     [SerializeField] private Transform cameraTransform;
@@ -62,6 +64,8 @@ public class BossSaveManager : MonoBehaviour
 
     public void ResetToSavePlayer()
     {
+        StartCoroutine(fade.FadeOutIn());
+
         //出現済みオブジェクトの削除
         foreach (var o in FindObjectsByType<DeleteObjects>(FindObjectsSortMode.None))
         {
