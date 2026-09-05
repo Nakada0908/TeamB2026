@@ -16,7 +16,7 @@ public class SavePoint : MonoBehaviour
     private Vector3 newPos;
 
     [Header("光加減の調整")]
-    [SerializeField] private float emissionPower = 2f;
+    [SerializeField] private float emissionPower = 1f;
     [SerializeField] private float emissionFadeTime = 1f;
     
     private Material hanaMaterial;
@@ -29,7 +29,7 @@ public class SavePoint : MonoBehaviour
         //全部の子オブジェクトのRendererを取得する
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
 
-        //マテリアルは全員共通なので、コピーを1個だけ作って全員に配る
+        //マテリアルを共通の１つにして、全員に配る
         hanaMaterial = renderers[0].material;
         for (int i = 0; i < renderers.Length; i++)
         {

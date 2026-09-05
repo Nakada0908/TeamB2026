@@ -1,6 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class BossLapCount : MonoBehaviour
 {
@@ -11,6 +11,11 @@ public class BossLapCount : MonoBehaviour
     private int maxLap = 3;
     private float previousAngle;
 
+    [Header("光加減の調整")]
+    [SerializeField] private float emissionPower = 1f;
+    [SerializeField] private float emissionFadeTime = 1f;
+
+    private Material flowerMaterial;
     [SerializeField] private GameObject flower;
     private Animator flowerAnime;
 
@@ -25,6 +30,18 @@ public class BossLapCount : MonoBehaviour
             previousAngle += 360f;
         }
 
+        //全部の子オブジェクトのRendererを取得する
+        Renderer[] renderers = flower.GetComponentsInChildren<Renderer>();
+
+        //マテリアルを共通の１つにして、全員に配る
+        flowerMaterial = renderers[0].material;
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            renderers[i].sharedMaterial = flowerMaterial;
+        }
+
+        //デフォでエミッションつけてるから消しておく
+        flowerMaterial.SetColor("_EmissionColor", Color.black);
         flowerAnime = flower.GetComponentInChildren<Animator>();
     }
 
@@ -51,6 +68,7 @@ public class BossLapCount : MonoBehaviour
             Debug.Log("現在" + lapCount + "周");
 
             flowerAnime.SetBool("isBloom", true);
+            StartCoroutine(FadeInEmission());
 
             if (lapCount >= maxLap)
             {
@@ -66,6 +84,7 @@ public class BossLapCount : MonoBehaviour
         else if(Mathf.Abs(totalRotation) >= 180f)
         {
             flowerAnime.SetBool("isBloom", false);
+            ResetEmission();
         }
 
         previousAngle = angle;
@@ -74,6 +93,8 @@ public class BossLapCount : MonoBehaviour
     //セーブ時のリセット用
     public void ResetRotation()
     {
+        ResetEmission();
+
         totalRotation = 0f;
 
         Vector3 dir = player.position - boss.position;
@@ -86,5 +107,26 @@ public class BossLapCount : MonoBehaviour
         }
 
         flowerAnime.SetBool("isBloom", false);
+    }
+
+    private IEnumerator FadeInEmission()
+    {
+        float time = 0;
+
+        while (time < emissionFadeTime)
+        {
+            time += Time.deltaTime;
+            float t = time / emissionFadeTime;
+            flowerMaterial.SetColor("_EmissionColor", Color.white * Mathf.Lerp(0f, emissionPower, t));
+            yield return null;
+        }
+
+        //最後正しく合わせる
+        flowerMaterial.SetColor("_EmissionColor", Color.white * emissionPower);
+    }
+
+    private void ResetEmission()
+    {
+        flowerMaterial.SetColor("_EmissionColor", Color.black);
     }
 }

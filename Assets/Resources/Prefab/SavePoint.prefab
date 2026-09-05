@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   savePointType: 0
-  emissionPower: 1
-  emissionFadeTime: 1
+  emissionPower: 0
+  emissionFadeTime: 0
 --- !u!1001 &1771997765145204665
 PrefabInstance:
   m_ObjectHideFlags: 0
