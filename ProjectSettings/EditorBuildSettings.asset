@@ -5,63 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Resources/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Resources/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Resources/Scenes/CameraTest/Scene_01.unity
-    guid: 8fddc2de0292ecb4aa0a569f6131c01f
-  - enabled: 0
-    path: Assets/Resources/Scenes/TutorialScene.unity
-    guid: e321f6832b2d5b847957276e561c5533
-  - enabled: 0
-    path: Assets/Resources/Scenes/UI Test with modle.unity
-    guid: 4d7f090fce2b45140bd4fef402e512d9
-  - enabled: 0
-    path: Assets/Resources/Scenes/AnimationTest_Yoshi.unity
-    guid: bc9883f7aa1b35b4493b40c9d63340f7
-  - enabled: 0
-    path: Assets/Resources/Scenes/CameraTest/Scene_02_Cinemachine.unity
-    guid: 5ab57ab4828877641a70f6495d54468e
-  - enabled: 0
-    path: Assets/Resources/Scenes/Stage1.unity
-    guid: b33fa047cf49d3949a3b94d1310f8fe2
   - enabled: 1
-    path: Assets/Resources/Scenes/Stage1Color.unity
+    path: Assets/_TeamB/Scenes/Stage1Color.unity
     guid: f5dde775861089b4ab44759a1d96a850
   - enabled: 1
-    path: Assets/Resources/Scenes/TitleScene.unity
+    path: Assets/_TeamB/Scenes/TitleScene.unity
     guid: 5c7816c626319a94e91ff2ef95650af6
   - enabled: 1
-    path: Assets/Resources/Scenes/Stage2.unity
+    path: Assets/_TeamB/Scenes/Stage2.unity
     guid: 815fa41c5eefb4b4b8e88938c39003cf
-  - enabled: 0
-    path: Assets/Resources/Scenes/Stage3.unity
-    guid: 7b5177e45304c73409720e7cc3fa5893
   - enabled: 1
-    path: Assets/Resources/Scenes/Stage3Eyes.unity
+    path: Assets/_TeamB/Scenes/Stage3Eyes.unity
     guid: 16ba4ca1a71607f4297b4ef192f67919
   - enabled: 1
-    path: Assets/Resources/Scenes/StageBoss.unity
+    path: Assets/_TeamB/Scenes/StageBoss.unity
     guid: a8caefede6149514abaf89c0e1d12b05
   - enabled: 1
-    path: Assets/Resources/Scenes/LookBack.unity
+    path: Assets/_TeamB/Scenes/LookBack.unity
     guid: fde4d00d6f48c7b4a89d453a4cdec743
-  - enabled: 0
-    path: Assets/Resources/Scenes/Yoshinobu/Stage3Eyes_Yoshi.unity
-    guid: f34289078ee4f3a45a302a7a0c8dfffe
   - enabled: 1
-    path: Assets/Resources/Scenes/EndingScene.unity
+    path: Assets/_TeamB/Scenes/EndingScene.unity
     guid: 479c3eb43caee7b4a992851677b7d28a
-  - enabled: 1
-    path: Assets/Resources/Scenes/Ichinose/ichinose.unity
-    guid: dd59053ae903c0447b2dc127141efccf
-  - enabled: 1
-    path: Assets/Resources/Scenes/Oonari/oonari.unity
-    guid: 191e6a7c1a934c945bd59c45c8feace3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 856b976ce7f52f8478080bc448f62cc8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: f2b4b6693dd84ba4293893fb75f3ee01, type: 3}
