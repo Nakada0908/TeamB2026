@@ -76,6 +76,7 @@ mono_crash.*
 
 #FBXをはじく
 *.fbx
+*.fbx.meta
 
 # Crashlytics generated file
 crashlytics-build.properties
