@@ -39,24 +39,6 @@ public class DebugSceneChanger : MonoBehaviour
             SceneManager.LoadScene("LookBack");
         }
 
-        //F6～F8は未設定
-
-        //各自のシーン
-        if (Input.GetKeyDown(KeyCode.F9))
-        {
-            SceneManager.LoadScene("LookBack");
-        }
-        if (Input.GetKeyDown(KeyCode.F10))
-        {
-            SceneManager.LoadScene("BossAtk");
-        }
-        if (Input.GetKeyDown(KeyCode.F11))
-        {
-            SceneManager.LoadScene("oonari");
-        }
-        if (Input.GetKeyDown(KeyCode.F12))
-        {
-            SceneManager.LoadScene("ichinose");
-        }
+        //F6～F12は未設定
     }
 }
