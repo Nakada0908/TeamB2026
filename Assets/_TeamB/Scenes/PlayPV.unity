@@ -789,12 +789,12 @@ GameObject:
   - component: {fileID: 1858865999}
   - component: {fileID: 1858865998}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: BlackBGCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1858865998
 BoxCollider:
   m_ObjectHideFlags: 0
