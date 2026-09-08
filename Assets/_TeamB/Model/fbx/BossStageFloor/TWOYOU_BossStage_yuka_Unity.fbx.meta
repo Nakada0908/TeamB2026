@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f55a2ad8fbae8a74b8ec1826e8ddd5db
+guid: 447c11fb189bff34d93359585bdb36fe
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface1
-    second: {fileID: 2100000, guid: 38c40f7e984ae1a498802dfa636f1a63, type: 2}
+      name: boss_yuka
+    second: {fileID: 2100000, guid: 525a76ab3f20d264598514993680fcb6, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: boss_yuka_standardSurface1_AlbedoTransparency
+    second: {fileID: 2800000, guid: c0e20bfdc1ac9834c8022e1cf41d1e2d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: boss_yuka_standardSurface1_MetallicSmoothness
+    second: {fileID: 2800000, guid: bc74301c581560946a27f6b72f8f8441, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: boss_yuka_standardSurface1_Normal
+    second: {fileID: 2800000, guid: 95250ec5b16c59244ab13f6fc41b920b, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
