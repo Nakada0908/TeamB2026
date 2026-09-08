@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_TeamB/Scenes/EndingScene.unity
     guid: 479c3eb43caee7b4a992851677b7d28a
+  - enabled: 1
+    path: Assets/_TeamB/Scenes/PlayPV.unity
+    guid: 3005b51035006414fa75cac2ca47891f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 856b976ce7f52f8478080bc448f62cc8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: f2b4b6693dd84ba4293893fb75f3ee01, type: 3}

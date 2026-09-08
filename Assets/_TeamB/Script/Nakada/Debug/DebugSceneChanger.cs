@@ -39,6 +39,9 @@ public class DebugSceneChanger : MonoBehaviour
             SceneManager.LoadScene("LookBack");
         }
 
-        //F6～F12は未設定
+        if(Input.GetKeyDown(KeyCode.F12))
+        {
+            SceneManager.LoadScene("PlayPV");
+        }
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2c6ec5711e9a89344a350b3085226931
+guid: f55a2ad8fbae8a74b8ec1826e8ddd5db
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,43 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Body_Core
-    second: {fileID: 2100000, guid: f1f45c21cd7bb4c44870aef5efe7e841, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bone_Core
-    second: {fileID: 2100000, guid: c658eac5444be5d41ba724e01a04f0d2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Meat_Core
-    second: {fileID: 2100000, guid: d3721c909adc8704bba368b49dbe785a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: botan_Core
-    second: {fileID: 2100000, guid: b07ed135a3b1a6c47a5123a72a5d1f8d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: hane_Core
-    second: {fileID: 2100000, guid: 7483207e9bae7404da30349e355ea0d4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: huku_Core
-    second: {fileID: 2100000, guid: b235baf11208c9547bbf295c097784c5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ke_Core
-    second: {fileID: 2100000, guid: 9b7556c13dd3ed04a98ab7a1f541762f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wakka_Core
-    second: {fileID: 2100000, guid: 3512c669ec074ea41a8e909a51c99e7b, type: 2}
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 38c40f7e984ae1a498802dfa636f1a63, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -69,36 +34,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      internalID: 1827226128182048838
-      firstFrame: 0
-      lastFrame: 160
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
