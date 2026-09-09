@@ -1,0 +1,306 @@
+fileFormatVersion: 2
+guid: 7513437e3d084f44eb2aef33f6686e11
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body_Core
+    second: {fileID: 2100000, guid: 18fb7fbe90e74c948a6f8d1e8a7fd7a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bone_Core
+    second: {fileID: 2100000, guid: 06e15ab7ba542874f92132c77a1d5e7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Meat_Core
+    second: {fileID: 2100000, guid: aec5fff00859d9845ba814f729e5f1ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: botan_Core
+    second: {fileID: 2100000, guid: e20920511f6843c4b8cf67fb516c2b69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hane_Core
+    second: {fileID: 2100000, guid: 9a51fa994ea26954a964de64f3489b4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: huku_Core
+    second: {fileID: 2100000, guid: 39bd19eec335d55498f3cb020922740a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ke_Core
+    second: {fileID: 2100000, guid: d853b8be730c20a40ac6d311c5c0afd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wakka_Core
+    second: {fileID: 2100000, guid: 7e7e8618cd49fba47b1e29644ea33c8d, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00_Bone_Core_BaseColor
+    second: {fileID: 2800000, guid: f4f963e620fd3fb4bb32adcf95a0744a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00_Bone_Core_Emissive
+    second: {fileID: 2800000, guid: ea1368f156620d14aa09e2519d96931a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00_Bone_Core_Height
+    second: {fileID: 2800000, guid: 24af54dc9a7e25c4b83c57c91c542392, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00_Bone_Core_Roughness
+    second: {fileID: 2800000, guid: ba5ec92cad0f23543aa92f7b54969d18, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00_Meat_Core_BaseColor
+    second: {fileID: 2800000, guid: 63070c9ce1924f744bf98f234a8ff2d2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00_Meat_Core_Height
+    second: {fileID: 2800000, guid: c68c9777c2e01dc4ea776bd50d042de8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00_Meat_Core_Roughness
+    second: {fileID: 2800000, guid: b20da2676ce9d3d42a87e025ed6a782f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__Body_BaseColor
+    second: {fileID: 2800000, guid: aadedff822aa4fa4a8cdf933c4098073, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__Body_Emissive
+    second: {fileID: 2800000, guid: b40124aafb7459743b76381e4edc1d12, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__Body_Height
+    second: {fileID: 2800000, guid: 24669aaa577faa34ba33ec4e64a5a085, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__Body_Roughness
+    second: {fileID: 2800000, guid: 80be1e4a1844b9f4c94c8be3c2fecd42, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__hane_BaseColor
+    second: {fileID: 2800000, guid: ee60dc84b948df34c8cedaa95244a1eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__hane_Height
+    second: {fileID: 2800000, guid: 54d6b56f3d36617488e406e320600a4e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__hane_Opacity
+    second: {fileID: 2800000, guid: 50a94875ae5374a45a75ed4ce5b1c4c9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__hane_Roughness
+    second: {fileID: 2800000, guid: bfe2eed1ae6731848a747cd3324a6f39, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__huku_BaseColor
+    second: {fileID: 2800000, guid: 870e72a867da3a143a8a4b89219caf8e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__huku_Height
+    second: {fileID: 2800000, guid: 513006ed1116abe4e8ab6abde3c3fd7c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__huku_Roughness
+    second: {fileID: 2800000, guid: b167f82611b014a4e8143fcb4d107917, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00__wakka_BaseColor
+    second: {fileID: 2800000, guid: 2a9c7afd84d89954da2e5a86200a2d2b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_00_aiStandardSurface7_Emissive
+    second: {fileID: 2800000, guid: f7b17cc5cc8edca48a11a62ba53b3320, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_ke_BaseColor
+    second: {fileID: 2800000, guid: d056c49563b8f5b4fb11f33e2af58797, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_ke_Opacity
+    second: {fileID: 2800000, guid: fbb4667c698223a4780a7909ad9fef75, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: L2_Boss_ke_Roughness
+    second: {fileID: 2800000, guid: 1cd46bf6e145384479dd40a865989bed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TWOYOU_tomoachi_modell_hair_fix_standardSurface1_BaseColor
+    second: {fileID: 2800000, guid: 54bbe848088335e42b14872c38095d79, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TWOYOU_tomoachi_modell_hair_fix_standardSurface1_Normal
+    second: {fileID: 2800000, guid: d6e8f5cf1ccd9294788523ba80dcdca2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TWOYOU_tomoachi_modell_hair_fix_standardSurface1_Roughness
+    second: {fileID: 2800000, guid: b3560e950e3f41f4b9435f10bbe539af, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 0
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

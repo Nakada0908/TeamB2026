@@ -62,11 +62,11 @@ public class SavePoint : MonoBehaviour
         {
             time += Time.deltaTime;
             float t = time / emissionFadeTime;
-            hanaMaterial.SetColor("_EmissionColor", Color.white * Mathf.Lerp(0f, emissionPower, t));
+            hanaMaterial.SetColor("_EmissionColor", Color.blue * Mathf.Lerp(0f, emissionPower, t));
             yield return null;
         }
 
         //最後正しく合わせる
-        hanaMaterial.SetColor("_EmissionColor", Color.white * emissionPower);
+        hanaMaterial.SetColor("_EmissionColor", Color.blue * emissionPower);
     }
 }
