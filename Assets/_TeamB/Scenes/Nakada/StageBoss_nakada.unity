@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 319098567}
   - component: {fileID: 319098566}
   m_Layer: 0
-  m_Name: hand
+  m_Name: Bosshand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4770,9 +4770,9 @@ SceneRoots:
   - {fileID: 8388515}
   - {fileID: 62578125}
   - {fileID: 943013960}
+  - {fileID: 319098567}
   - {fileID: 1200426406}
   - {fileID: 1634948014}
   - {fileID: 1031819041}
   - {fileID: 1678098677}
   - {fileID: 775569138}
-  - {fileID: 319098567}

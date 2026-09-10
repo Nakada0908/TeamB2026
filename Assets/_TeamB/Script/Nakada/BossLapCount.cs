@@ -10,6 +10,7 @@ public class BossLapCount : MonoBehaviour
     public int lapCount { get; private set; }
     private int maxLap = 3;
     private float previousAngle;
+    [SerializeField] private string endSceneName;
 
     [Header("光加減の調整")]
     [SerializeField] private float emissionPower = 1f;
@@ -74,7 +75,7 @@ public class BossLapCount : MonoBehaviour
             {
                 Debug.Log(maxLap+"周回しました!Endingへ");
 
-                SceneManager.LoadScene("LookBack");
+                SceneManager.LoadScene(endSceneName);
                 return;
             }
 
