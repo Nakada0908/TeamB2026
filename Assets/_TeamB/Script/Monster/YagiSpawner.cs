@@ -19,6 +19,7 @@ public class YagiSpawner : MonoBehaviour
                 if(yagi)
                 {
                     yagi.SetActive(true);
+                    yagi.GetComponent<Yagi>().Respawn(EYagiState.Walk, "Walk");
                 }
             }
 

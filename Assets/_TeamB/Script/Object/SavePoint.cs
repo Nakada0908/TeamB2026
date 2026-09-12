@@ -18,6 +18,7 @@ public class SavePoint : MonoBehaviour
     [Header("光加減の調整")]
     [SerializeField] private float emissionPower = 1f;
     [SerializeField] private float emissionFadeTime = 1f;
+    [SerializeField] private Color lightColor = Color.blue;
     
     private Material hanaMaterial;
     private Animator hanaAnimator;
@@ -62,11 +63,11 @@ public class SavePoint : MonoBehaviour
         {
             time += Time.deltaTime;
             float t = time / emissionFadeTime;
-            hanaMaterial.SetColor("_EmissionColor", Color.blue * Mathf.Lerp(0f, emissionPower, t));
+            hanaMaterial.SetColor("_EmissionColor", lightColor * Mathf.Lerp(0f, emissionPower, t));
             yield return null;
         }
 
         //最後正しく合わせる
-        hanaMaterial.SetColor("_EmissionColor", Color.blue * emissionPower);
+        hanaMaterial.SetColor("_EmissionColor", lightColor * emissionPower);
     }
 }

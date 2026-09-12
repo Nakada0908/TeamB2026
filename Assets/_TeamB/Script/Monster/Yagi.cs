@@ -159,4 +159,12 @@ public class Yagi : MonoBehaviour
         }
     }
 
+    public void Respawn(EYagiState state, string animName)
+    {
+        currentState = state;
+        currentAnimName = animName;
+        isEnter = false;
+
+        animator.Play(animName, 0, 0f);
+    }
 }

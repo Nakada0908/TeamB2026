@@ -15,6 +15,7 @@ public class BossLapCount : MonoBehaviour
     [Header("光加減の調整")]
     [SerializeField] private float emissionPower = 1f;
     [SerializeField] private float emissionFadeTime = 1f;
+    [SerializeField] private Color lightColor = Color.blue;
 
     private Material flowerMaterial;
     [SerializeField] private GameObject flower;
@@ -118,12 +119,12 @@ public class BossLapCount : MonoBehaviour
         {
             time += Time.deltaTime;
             float t = time / emissionFadeTime;
-            flowerMaterial.SetColor("_EmissionColor", Color.white * Mathf.Lerp(0f, emissionPower, t));
+            flowerMaterial.SetColor("_EmissionColor", lightColor * Mathf.Lerp(0f, emissionPower, t));
             yield return null;
         }
 
         //最後正しく合わせる
-        flowerMaterial.SetColor("_EmissionColor", Color.white * emissionPower);
+        flowerMaterial.SetColor("_EmissionColor", lightColor * emissionPower);
     }
 
     private void ResetEmission()

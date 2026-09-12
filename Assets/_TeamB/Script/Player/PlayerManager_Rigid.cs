@@ -498,7 +498,7 @@ public class PlayerManager_Rigid : MonoBehaviour
         {
             Debug.Log("Touch");
             specialAction = true;
-            SoundManager.instance.PlayBGMSound("Stage2");
+            //SoundManager.instance.PlayBGMSound("Stage2");
             currentStates = EPlayerStates.Death;
         }
     }
