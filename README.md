@@ -1,55 +1,61 @@
 # TeamB2026
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-有償アセット
-━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 使用アセット・オープンソースライブラリ
 
-アセット：Medieval Fantasy Ruins - Dark Forest Environment
-制作者　：ScansFactory
-URL　　 ：https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-fantasy-ruins-dark-forest-environment-258405
+## 有償アセット
 
-アセット：Grasslands - Stylized Nature
-制作者　：Raygeas
-URL　　 ：https://assetstore.unity.com/packages/p/grasslands-stylized-nature-287353
+### Medieval Fantasy Ruins - Dark Forest Environment
 
-アセット：AAA Space & Nebula HDRI Pack – 11 Ultra HD 8K Skyboxes (EXR + JPG)
-制作者　：Matei Ioan Alexandru
-URL　　 ：https://assetstore.unity.com/packages/3d/environments/aaa-space-nebula-hdri-pack-11-ultra-hd-8k-skyboxes-exr-jpg-390748
+- 制作者：ScansFactory
+- URL：[Unity Asset Store](https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-fantasy-ruins-dark-forest-environment-258405)
 
-アセット：Romantic Piano Music Pack
-制作者　：Stormwave Audio
-URL　　 ：https://assetstore.unity.com/packages/audio/music/romantic-piano-music-pack-108582
+### Grasslands - Stylized Nature
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-無償アセット
-━━━━━━━━━━━━━━━━━━━━━━━━━━
+- 制作者：Raygeas
+- URL：[Unity Asset Store](https://assetstore.unity.com/packages/p/grasslands-stylized-nature-287353)
 
-アセット：Furniture used set
-制作者　：Maximalist
-URL　　 ：https://assetstore.unity.com/packages/3d/props/furniture/furniture-used-set-185990
+### AAA Space & Nebula HDRI Pack – 11 Ultra HD 8K Skyboxes (EXR + JPG)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-オープンソース（MIT License）
-━━━━━━━━━━━━━━━━━━━━━━━━━━
+- 制作者：Matei Ioan Alexandru
+- URL：[Unity Asset Store](https://assetstore.unity.com/packages/3d/environments/aaa-space-nebula-hdri-pack-11-ultra-hd-8k-skyboxes-exr-jpg-390748)
 
-名称　　：OpenFracture
-制作者　：Daniel Greenheck
-URL　　 ：https://github.com/dgreenheck/OpenFracture
+### Romantic Piano Music Pack
 
-名称　　：Unity URP Volumetric Light
-制作者　：Cristian Qiu
-URL　　 ：https://github.com/CristianQiu/Unity-URP-Volumetric-Light
+- 制作者：Stormwave Audio
+- URL：[Unity Asset Store](https://assetstore.unity.com/packages/audio/music/romantic-piano-music-pack-108582)
 
-名称　　：Shader Graph Custom Lighting
-制作者　：Cyanilux
-URL　　 ：https://github.com/Cyanilux/URP_ShaderGraphCustomLighting
+## 無償アセット
 
-上記3点は MIT License に基づき使用しています。
+### Furniture used set
 
-OpenFracture                 Copyright (c) 2021 Daniel Greenheck
-Unity URP Volumetric Light   Copyright (c) 2025 Cristian Qiu
-Shader Graph Custom Lighting Copyright (c) 2020 Cyanilux
+- 制作者：Maximalist
+- URL：[Unity Asset Store](https://assetstore.unity.com/packages/3d/props/furniture/furniture-used-set-185990)
 
+## オープンソースライブラリ
+
+以下のライブラリは、MIT Licenseに基づいて使用しています。
+
+### OpenFracture
+
+- 制作者：Daniel Greenheck
+- URL：[GitHub](https://github.com/dgreenheck/OpenFracture)
+- Copyright (c) 2021 Daniel Greenheck
+
+### Unity URP Volumetric Light
+
+- 制作者：Cristian Qiu
+- URL：[GitHub](https://github.com/CristianQiu/Unity-URP-Volumetric-Light)
+- Copyright (c) 2025 Cristian Qiu
+
+### Shader Graph Custom Lighting
+
+- 制作者：Cyanilux
+- URL：[GitHub](https://github.com/Cyanilux/URP_ShaderGraphCustomLighting)
+- Copyright (c) 2020 Cyanilux
+
+## MIT License
+
+```text
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -67,3 +73,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
