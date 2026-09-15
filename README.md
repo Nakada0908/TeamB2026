@@ -47,12 +47,6 @@
 - URL：[GitHub](https://github.com/CristianQiu/Unity-URP-Volumetric-Light)
 - Copyright (c) 2025 Cristian Qiu
 
-### Shader Graph Custom Lighting
-
-- 制作者：Cyanilux
-- URL：[GitHub](https://github.com/Cyanilux/URP_ShaderGraphCustomLighting)
-- Copyright (c) 2020 Cyanilux
-
 ## MIT License
 
 ```text
