@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 1964791920}
   - component: {fileID: 1964791919}
   m_Layer: 0
-  m_Name: MoveAudioSource
+  m_Name: MovieAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

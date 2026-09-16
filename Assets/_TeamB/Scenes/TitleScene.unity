@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 97708434}
   - component: {fileID: 97708433}
   m_Layer: 0
-  m_Name: MoveAudioSource
+  m_Name: MovieAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
