@@ -22,6 +22,18 @@ public class HintStage3 : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider collision)
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Joystick1Button0))
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                itemText = "";
+                tmpText.text = itemText;
+            }
+        }
+    }
+
     private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))

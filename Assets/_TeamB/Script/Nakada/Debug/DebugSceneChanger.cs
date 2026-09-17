@@ -39,9 +39,14 @@ public class DebugSceneChanger : MonoBehaviour
             SceneManager.LoadScene("LookBack");
         }
 
+        //特殊操作
         if(Input.GetKeyDown(KeyCode.F12))
         {
             SceneManager.LoadScene("PlayPV");
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("VloChange");
         }
     }
 }
