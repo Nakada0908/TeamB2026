@@ -2,6 +2,7 @@
 
 public class NuigurumiDrop : MonoBehaviour
 {
+
     public GameObject nuigurumiPrefab;
     public Transform spawnPoint;
 
@@ -11,7 +12,8 @@ public class NuigurumiDrop : MonoBehaviour
     private Rigidbody rb;
     private Vector3 startPos;
 
-    private bool spawned = false;
+    //oonari↓
+    public bool spawned = false;
     private bool waitingForButton = false;
 
     public GameObject deleteOnButton;
@@ -90,5 +92,18 @@ public class NuigurumiDrop : MonoBehaviour
 
         startPos = obj.transform.position;
         currentState = State.MoveForward;
+    }
+
+    public void ResetTrigger()
+    {
+        spawned = false;
+
+        GameObject[] yagis = GameObject.FindGameObjectsWithTag("Yagi");
+        foreach (GameObject yagi in yagis)
+        {
+            yagi.SetActive(false);
+        }
+
+
     }
 }
