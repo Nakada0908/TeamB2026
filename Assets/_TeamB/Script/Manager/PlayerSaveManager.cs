@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerSaveManager : MonoBehaviour
 {
     public static PlayerSaveManager instance;
-
+    public NuigurumiDrop nuigurumidrop;
     [SerializeField]
     private Vector3 playerPosition = new Vector3(0f, 0f, 0f);
 
@@ -42,6 +42,12 @@ public class PlayerSaveManager : MonoBehaviour
     {
         player.transform.position = playerPosition;
         ResetYagiBySavePoint(lastSavePoint);
+
+        NuigurumiDrop[] drops = FindObjectsOfType<NuigurumiDrop>();
+        foreach (NuigurumiDrop drop in drops)
+        {
+            drop.ResetTrigger();
+        }
     }
 
     public ESavePointType GetSavePointType()
