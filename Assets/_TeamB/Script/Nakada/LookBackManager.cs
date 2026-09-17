@@ -5,7 +5,7 @@ public class LookBackManager : MonoBehaviour
 {
     [Header("演出が終わってから次のシーンへ")]
     [SerializeField] private float returnSceneTime = 17f;
-    [SerializeField] private string returnSceneName = "Stage1Color";
+    [SerializeField] private string returnSceneName = "PlayPV";
 
     private PlayerManager_Rigid playerCntrol;
 
