@@ -660,6 +660,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 51.29
       objectReference: {fileID: 0}
+    - target: {fileID: 5799707862492966261, guid: ee377ec335395d3458e55dfd770fc571, type: 3}
+      propertyPath: m_Range
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799707862492966261, guid: ee377ec335395d3458e55dfd770fc571, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799707862492966261, guid: ee377ec335395d3458e55dfd770fc571, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799707862492966261, guid: ee377ec335395d3458e55dfd770fc571, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799707862492966261, guid: ee377ec335395d3458e55dfd770fc571, type: 3}
+      propertyPath: m_Intensity
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799707862492966261, guid: ee377ec335395d3458e55dfd770fc571, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7999108943510113133, guid: ee377ec335395d3458e55dfd770fc571, type: 3}
       propertyPath: m_Name
       value: Eye_naname

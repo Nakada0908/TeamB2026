@@ -52,7 +52,7 @@ TagManager:
   - 
   - 
   - BlockNui
-  - Monster
+  - BossMonster
   m_SortingLayers:
   - name: Default
     uniqueID: 0
