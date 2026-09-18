@@ -3,6 +3,7 @@ using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class NewTitleScene: MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class NewTitleScene: MonoBehaviour
     public Image fadeImage;
     public float fadeTime = 1.0f;
     public string nextSceneName;
+
+    [SerializeField] private AudioMixer titleAudioMixer;
 
     void Start()
     {
@@ -20,6 +23,8 @@ public class NewTitleScene: MonoBehaviour
             //SoundManager.instance.StopBGMSound();
         fadeImage.color = new Color(0, 0, 0, 0);
         videoPlayer.loopPointReached += OnMovieEnd;
+
+        titleAudioMixer.SetFloat("TitleVolume", VolumeChenger.titleVolume);
     }
 
     void OnMovieEnd(VideoPlayer vp)
