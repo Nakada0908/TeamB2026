@@ -45,6 +45,10 @@ public class BossLapCount : MonoBehaviour
         //デフォでエミッションつけてるから消しておく
         flowerMaterial.SetColor("_EmissionColor", Color.black);
         flowerAnime = flower.GetComponentInChildren<Animator>();
+
+        //初期状態で花を咲かせる
+        flowerAnime.SetBool("isBloom", true);
+        StartCoroutine(FadeInEmission());
     }
 
     void Update()
