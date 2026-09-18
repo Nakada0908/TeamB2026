@@ -8,8 +8,8 @@ public class VolumeChenger : MonoBehaviour
     private const float maxVolume = 20f;
     private const float buttonStep = 0.1f;
 
-    public static float titleVolume { get; private set; } = 0f;
-    public static float pvVolume { get; private set; } = 0f;
+    public static float titleVolume { get; private set; } = 5f;
+    public static float pvVolume { get; private set; } = 3f;
 
     [Header("ミキサー")]
     [SerializeField] private AudioMixer titleAudioMixer;
