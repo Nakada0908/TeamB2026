@@ -1,4 +1,5 @@
 eventTypeStr,clockColliderPosition,clockSpawnPosition,dropDelayTime,メモ
+RightMiniYagi,1,12,0,初めにヤギの突進で移動方向を意識させる
 RightNui,3,3,0,少し歩かせてから一週目のイベント開始
 LeftNui,5,6,0
 RightNui,7,7,0
