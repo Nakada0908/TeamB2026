@@ -17,8 +17,11 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 1e2f4099bd7441744b1cd092605ec1b6
-    name: MovieVolume
-  m_AudioMixerGroupViews: []
+    name: TitleVolume
+  m_AudioMixerGroupViews:
+  - guids:
+    - 573ee3f20ccca404da742924ca379f52
+    name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
@@ -64,5 +67,5 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 64fae56c53c5ded448b647c6d736e357
   m_FloatValues:
-    1e2f4099bd7441744b1cd092605ec1b6: 17
+    1e2f4099bd7441744b1cd092605ec1b6: 0
   m_TransitionOverrides: {}

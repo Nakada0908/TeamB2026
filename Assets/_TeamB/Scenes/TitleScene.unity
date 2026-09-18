@@ -890,6 +890,7 @@ MonoBehaviour:
   fadeImage: {fileID: 197326999}
   fadeTime: 1
   nextSceneName: Stage2
+  titleAudioMixer: {fileID: 24100000, guid: 972b1496d6b7c114797a5a432af4fe1c, type: 2}
 --- !u!4 &1565740863
 Transform:
   m_ObjectHideFlags: 0

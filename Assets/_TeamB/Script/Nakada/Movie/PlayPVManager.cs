@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Video;
 
 public class PlayPVManager : MonoBehaviour
 {
     [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private AudioMixer pvAudioMixer;
 
     private void Start()
     {
@@ -11,5 +13,7 @@ public class PlayPVManager : MonoBehaviour
         {
             SoundManager.instance.StopBGMSound();
         }
+
+        pvAudioMixer.SetFloat("PVVolume", VolumeChenger.pvVolume);
     }
 }

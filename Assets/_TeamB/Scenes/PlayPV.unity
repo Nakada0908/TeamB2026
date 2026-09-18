@@ -665,6 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 152594703}
+  pvAudioMixer: {fileID: 24100000, guid: 017f4d72fb2c6554684602fdfdaccc8f, type: 2}
 --- !u!4 &870535469
 Transform:
   m_ObjectHideFlags: 0

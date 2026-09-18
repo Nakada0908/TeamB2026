@@ -18,7 +18,10 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 9fd4e0002bf36e34aacf04b401ee3e94
     name: PVVolume
-  m_AudioMixerGroupViews: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - c8dbc264ac357864193a87a0f8a95ed4
+    name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
@@ -64,5 +67,5 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 163cc1d62dc37a7469c5aa7a2cce09bc
   m_FloatValues:
-    9fd4e0002bf36e34aacf04b401ee3e94: 10
+    9fd4e0002bf36e34aacf04b401ee3e94: 0
   m_TransitionOverrides: {}
