@@ -593,8 +593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab591c014d8b6a74f8d392dac067c4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TitleAudioMixer: {fileID: 24100000, guid: 972b1496d6b7c114797a5a432af4fe1c, type: 2}
-  PVAudioMixer: {fileID: 24100000, guid: 017f4d72fb2c6554684602fdfdaccc8f, type: 2}
+  titleAudioMixer: {fileID: 24100000, guid: 972b1496d6b7c114797a5a432af4fe1c, type: 2}
+  pvAudioMixer: {fileID: 24100000, guid: 017f4d72fb2c6554684602fdfdaccc8f, type: 2}
   volumeSlider: {fileID: 402090378}
   nowVolumeText: {fileID: 897236947}
   pvVolumeSlider: {fileID: 316963282}
