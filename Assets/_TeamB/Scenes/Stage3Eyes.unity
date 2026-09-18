@@ -3195,6 +3195,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1429118953}
   moveSpeed: 1
   moveDistance: 1.5
+  spawned: 0
   deleteOnButton: {fileID: 0}
 --- !u!65 &131671677
 BoxCollider:
@@ -7190,6 +7191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40aa3f32203b844b9528554d1059443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nuigurumidrop: {fileID: 0}
   playerPosition: {x: 0, y: 0, z: -4}
   yagi: {fileID: 0}
 --- !u!4 &270943736
@@ -8664,6 +8666,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 313699970}
   moveSpeed: 1
   moveDistance: 1.5
+  spawned: 0
   deleteOnButton: {fileID: 0}
 --- !u!65 &341556899
 BoxCollider:
@@ -13056,6 +13059,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 42525478}
   moveSpeed: 1
   moveDistance: 1.5
+  spawned: 0
   deleteOnButton: {fileID: 0}
 --- !u!65 &514350659
 BoxCollider:
@@ -16288,6 +16292,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 641173051}
   moveSpeed: 1
   moveDistance: 1.5
+  spawned: 0
   deleteOnButton: {fileID: 0}
 --- !u!65 &673207016
 BoxCollider:
@@ -31774,6 +31779,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 3.072258
       objectReference: {fileID: 0}
+    - target: {fileID: 2265088257124430938, guid: de07165dde1813c459bb06f8e81ef223, type: 3}
+      propertyPath: m_Size.x
+      value: 1.311828
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265088257124430938, guid: de07165dde1813c459bb06f8e81ef223, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265088257124430938, guid: de07165dde1813c459bb06f8e81ef223, type: 3}
+      propertyPath: m_Center.x
+      value: -0.018420026
+      objectReference: {fileID: 0}
     - target: {fileID: 4217204880135722313, guid: de07165dde1813c459bb06f8e81ef223, type: 3}
       propertyPath: m_LocalPosition.x
       value: 181.62
@@ -33950,6 +33967,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1983035286}
   moveSpeed: 1
   moveDistance: 1.5
+  spawned: 0
   deleteOnButton: {fileID: 136385566}
 --- !u!65 &1373292333
 BoxCollider:
@@ -47512,6 +47530,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 732704883}
   moveSpeed: 1
   moveDistance: 1.5
+  spawned: 0
   deleteOnButton: {fileID: 0}
 --- !u!65 &1809352070
 BoxCollider:
@@ -47840,6 +47859,14 @@ PrefabInstance:
     - target: {fileID: 1021445448147514164, guid: a19958dc980446143acf043b8c1e57c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013968023146078258, guid: a19958dc980446143acf043b8c1e57c4, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0589281
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013968023146078258, guid: a19958dc980446143acf043b8c1e57c4, type: 3}
+      propertyPath: m_Center.x
+      value: -0.0030862065
       objectReference: {fileID: 0}
     - target: {fileID: 5482255556522342454, guid: a19958dc980446143acf043b8c1e57c4, type: 3}
       propertyPath: m_Name
@@ -50324,6 +50351,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1815405971}
   moveSpeed: 1
   moveDistance: 1.5
+  spawned: 0
   deleteOnButton: {fileID: 0}
 --- !u!65 &1929648988
 BoxCollider:
@@ -53180,6 +53208,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 787208098}
   moveSpeed: 1
   moveDistance: 1.5
+  spawned: 0
   deleteOnButton: {fileID: 0}
 --- !u!65 &2063119279
 BoxCollider:
