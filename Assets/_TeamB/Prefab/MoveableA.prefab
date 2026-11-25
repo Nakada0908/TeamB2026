@@ -37,6 +37,7 @@ Transform:
   - {fileID: 8127094472691582863}
   - {fileID: 3855493097744216913}
   - {fileID: 8659996361777537878}
+  - {fileID: 5477080162514765940}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &2726570927419524857
@@ -448,6 +449,80 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a2dc8dd6d930e174f8d19b94eed732e2, type: 3}
   m_PrefabInstance: {fileID: 3855493097744345553}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5075657380423002974
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2236079291461289678}
+    m_Modifications:
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.141
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114694874633355710, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+      propertyPath: m_Name
+      value: 'BentCloth_Uraari '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+--- !u!4 &5477080162514765940 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 752703795984327466, guid: d3a2cba9dbac13f4896d6eff7c9694e5, type: 3}
+  m_PrefabInstance: {fileID: 5075657380423002974}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7287159413336190632
 PrefabInstance:
