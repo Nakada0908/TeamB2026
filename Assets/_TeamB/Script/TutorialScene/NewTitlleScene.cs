@@ -27,20 +27,13 @@ public class NewTitleScene: MonoBehaviour
         videoPlayer.loopPointReached += OnMovieEnd;
 
         //通常時はホラーを流す
-        if(HorrorModeChenger.Instance != null)
+        if (HorrorModeChenger.isHorrorMode)
         {
-            if (HorrorModeChenger.Instance.isHorrorMode)
-            {
-                videoPlayer.clip = horrorVideo;
-            }
-            else
-            {
-                videoPlayer.clip = notHorrorVideo;
-            }
+            videoPlayer.clip = horrorVideo;
         }
         else
         {
-            videoPlayer.clip = horrorVideo;
+            videoPlayer.clip = notHorrorVideo;
         }
         videoPlayer.Play();
 
