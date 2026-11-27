@@ -7,7 +7,9 @@ using UnityEngine.Audio;
 
 public class NewTitleScene: MonoBehaviour
 {
-    public VideoPlayer videoPlayer;
+    [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private VideoClip horrorVideo;
+    [SerializeField] private VideoClip notHorrorVideo;
     public Image fadeImage;
     public float fadeTime = 1.0f;
     public string nextSceneName;
@@ -23,6 +25,24 @@ public class NewTitleScene: MonoBehaviour
             //SoundManager.instance.StopBGMSound();
         fadeImage.color = new Color(0, 0, 0, 0);
         videoPlayer.loopPointReached += OnMovieEnd;
+
+        //通常時はホラーを流す
+        if(HorrorModeChenger.Instance != null)
+        {
+            if (HorrorModeChenger.Instance.isHorrorMode)
+            {
+                videoPlayer.clip = horrorVideo;
+            }
+            else
+            {
+                videoPlayer.clip = notHorrorVideo;
+            }
+        }
+        else
+        {
+            videoPlayer.clip = horrorVideo;
+        }
+        videoPlayer.Play();
 
         titleAudioMixer.SetFloat("TitleVolume", VolumeChenger.titleVolume);
     }

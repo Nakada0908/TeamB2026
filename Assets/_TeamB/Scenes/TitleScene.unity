@@ -446,7 +446,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -887,6 +887,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 152594703}
+  horrorVideo: {fileID: 32900000, guid: 69aa54e30f757024b950250f77085e07, type: 3}
+  notHorrorVideo: {fileID: 32900000, guid: 25c543596d9310c41ae7678fec0fd4a8, type: 3}
   fadeImage: {fileID: 197326999}
   fadeTime: 1
   nextSceneName: Stage2

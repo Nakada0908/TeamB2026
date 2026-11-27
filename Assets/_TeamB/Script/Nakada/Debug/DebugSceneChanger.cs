@@ -46,7 +46,7 @@ public class DebugSceneChanger : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("VloChange");
+            SceneManager.LoadScene("GameSettings");
         }
     }
 }

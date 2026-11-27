@@ -4,7 +4,6 @@ using UnityEngine.Video;
 
 public class PlayPVManager : MonoBehaviour
 {
-    [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private AudioMixer pvAudioMixer;
 
     private void Start()
