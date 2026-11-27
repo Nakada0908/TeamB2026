@@ -1,35 +1,26 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HorrorModeChenger : MonoBehaviour
 {
-    public static HorrorModeChenger Instance { get; private set; }
-    public bool isHorrorMode { get; private set; }
+    public static bool isHorrorMode { get; private set; } = true;
     [SerializeField] private Text horrorModeText;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     private void Start()
     {
-        isHorrorMode = true;
-        horrorModeText.text = "Horror";
+        UpdateText();
     }
 
+    //ƒ{ƒ^ƒ“‰Ÿ‚³‚ê‚½‚Æ‚«—p
     public void ChangeHorrorMode()
     {
         isHorrorMode = !isHorrorMode;
+        UpdateText();
+    }
 
+    private void UpdateText()
+    {
         if (isHorrorMode)
         {
             horrorModeText.text = "Horror";
